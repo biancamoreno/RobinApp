@@ -1,0 +1,22 @@
+@import "common";
+@import "font-icons/font-icons";
+
+header {
+    padding: 5px 15px;
+    .r-logo {
+        .size(160px, 50px);
+        background-image: url(../img/LogoRobin.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        float: left;
+    }
+    .box-available {
+        .size(140px, 40px);
+        background-color: @orangeDefault;
+        margin: 10px 0 0 15px;
+        float: right;
+        &:first-child {
+            margin-right: 0;
+        }
+    }
+}
