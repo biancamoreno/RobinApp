@@ -1,16 +1,49 @@
-<DOCTYPE! html>
-<html>
+<DOCTYPE! html/>
+<html lang="pt">
     <head>
         <title>Robin App</title>
+        <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script src="js/maps.js"></script>
     </head>
     <body>
-
         <header>
             <div class="r-logo"></div>
-            <div class="box-available"></div>
-            <div class="box-available"></div>
-            <div class="box-available"></div>
+            <div class="box-available">
+                <i class="icon-display"></i>
+                <div>
+                    <span>Acesso via</span>
+                    <span>Browser</span>
+                </div>
+            </div>
+            <div class="box-available">
+                <i class="icon-play3"></i>
+                <div>
+                    <span>Download Disponível</span>
+                    <span>Google Play</span>
+                </div>
+            </div>
+            <div class="box-available">
+                <i class="icon-appleinc"></i>
+                <div>
+                    <span>Download Disponível</span>
+                    <span>App Store</span>
+                </div>
+            </div>
         </header>
+        <section class="drag-map">
+            <div>
+                <i class="icon-clock"></i>
+                <span>Seu bairro em tempo real</span>
+            </div>
+            <div>
+                <i class="icon-point-up"></i>
+                <span>Arraste o mapa</span>
+            </div>
+            <div class="glass-v"></div>
+            <div class="glass-h"></div>
+            <div id="googleMap"></div>
+        </section>
     </body>
 </html>

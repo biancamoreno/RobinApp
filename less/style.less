@@ -2,7 +2,8 @@
 @import "font-icons/font-icons";
 
 header {
-    padding: 5px 15px;
+    .size(100%, 80px);
+    padding: 16px;
     .r-logo {
         .size(160px, 50px);
         background-image: url(../img/LogoRobin.png);
@@ -11,12 +12,111 @@ header {
         float: left;
     }
     .box-available {
-        .size(140px, 40px);
+        .size(auto, 45px);
         background-color: @orangeDefault;
-        margin: 10px 0 0 15px;
+        margin-left: 15px;
         float: right;
+        padding: 7px;
+        color: #fff;
+        cursor: pointer;
+        .displayFlex;
         &:first-child {
             margin-right: 0;
         }
+        div {
+            .displayFlex;
+            .flexDirection;
+            span {
+                &:first-child {
+                    font-size: 10px;
+                }
+                &:last-child {
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+        }
+        i {
+            margin-right: 3px;
+            &:before {
+                font-size: 26px;
+            }
+        }
+    }
+}
+.drag-map {
+    position: relative;
+    div {
+        &:first-child, &:nth-child(2) {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 500;
+            text-transform: uppercase;
+            .size(264px, 100%);
+            position: absolute;
+            left: calc(~"(50% - 150px) - 50% + 264px");
+            z-index: 2;
+            .displayFlex;
+            .flexDirection;
+            .justifyContent(center);
+            text-align: center;
+            i {
+                margin-bottom: 20px;
+                font-size: 72px;
+                &:before {
+                    line-height: 72px;
+                }
+            }
+        }
+        &:nth-child(2) {
+            font-size: 24px;
+            text-transform: none;
+            right: calc(~"(50% - 150px) - 50% + 264px");
+            left: auto;
+            i {
+                margin-bottom: 10px;
+                font-size: 32px;
+                &:before {
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+    .glass-h {
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            .size(300px, 50px);
+            left: calc(~"50% - 150px");
+            top: 0;
+            opacity: 0.7;
+            background-color: #bbd9ea;
+            z-index: 1;
+        }
+        &:after {
+            bottom: 0;
+            top: auto;
+        }
+
+    }
+    .glass-v {
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            .size(calc(~"50% - 150px"), 100%);
+            left: 0;
+            top: 0;
+            opacity: 0.7;
+            background-color: #bbd9ea;
+            z-index: 1;
+        }
+        &:after {
+            right: 0;
+            left: auto;
+        }
+
+    }
+    #googleMap {
+        .size(100%, 600px);
     }
 }

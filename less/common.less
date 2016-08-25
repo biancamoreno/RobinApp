@@ -4,6 +4,7 @@
     list-style: none;
     vertical-align: baseline;
     box-sizing: border-box;
+    font-family: Arial;
 }
 
 @orangeDefault: #f7ca18;
@@ -12,4 +13,36 @@
 .size(@width: 100%, @height: @width) {
     width: @width;
     height: @height;
+}
+.displayFlex (@param: flex) {
+    display: @param;
+    display: -webkit-@param;
+    display: -ms-@param;
+    display: -moz-@param;
+}
+.alignItens (@param: center) {
+    align-items: @param;
+    -webkit-align-items: @param;
+    -ms-align-items: @param;
+    -moz-align-items: @param;
+    -ms-flex-align: @param;
+}
+.justifyContent (@param: space-between) {
+    justify-content: @param;
+    -webkit-justify-content: @param;
+    -ms-justify-content: @param;
+    -moz-justify-content: @param;
+    -ms-flex-pack: @param;
+}
+.flexWrap (@param: wrap) {
+    flex-wrap: @param;
+    -webkit-flex-wrap: @param;
+    -ms-flex-wrap: @param;
+    -moz-flex-wrap: @param;
+}
+.flexDirection (@param: column) {
+    flex-direction: @param;
+    -webkit-flex-direction: @param;
+    -ms-flex-direction: @param;
+    -moz-flex-direction: @param;
 }

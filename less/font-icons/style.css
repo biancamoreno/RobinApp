@@ -7,8 +7,8 @@
 }
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?gdjfsc');
-  src: url('fonts/icomoon.eot?gdjfsc#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?gdjfsc') format('truetype'), url('fonts/icomoon.woff?gdjfsc') format('woff'), url('fonts/icomoon.svg?gdjfsc#icomoon') format('svg');
+  src: url('../less/font-icons/fonts/icomoon.eot');
+  src: url('../less/font-icons/fonts/icomoon.eot') format('embedded-opentype'), url('../less/font-icons/fonts/icomoon.ttf') format('truetype'), url('../less/font-icons/fonts/icomoon.woff') format('woff'), url('../less/font-icons/fonts/icomoon.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
