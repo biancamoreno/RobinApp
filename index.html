@@ -2,8 +2,9 @@
 <html lang="pt">
     <head>
         <title>Robin App</title>
-        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
         <link rel="icon" type="image/png" href="/img/robinfavicon.png" />
+        <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -12,6 +13,23 @@
     <body>
         <header>
             <div class="r-logo"></div>
+            <div class="row form-login">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input name="email" type="text" class="validate">
+                      <label class="active" for="email">Email</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input name="password" type="password" class="validate">
+                      <label class="active" for="password">Senha</label>
+                    </div>
+                  </div>
+                    <button class="btn waves-effect waves-light right" type="submit" name="action">ENTRAR</button>
+                    <a class="waves-effect waves-teal btn-flat right">Cadastrar</a>
+                </form>
+            </div>
+<!--
             <div class="box-available">
                 <i class="icon-display"></i>
                 <div>
@@ -33,13 +51,14 @@
                     <span>App Store</span>
                 </div>
             </div>
+-->
         </header>
         <section class="drag-map">
-            <div>
+            <div class="hide-on-med-and-down">
                 <i class="icon-clock"></i>
                 <span>Seu bairro em tempo real</span>
             </div>
-            <div>
+            <div class="hide-on-med-and-down">
                 <i class="icon-point-up"></i>
                 <span>Arraste o mapa</span>
             </div>
@@ -53,7 +72,7 @@
                 <p>Você pode alertar seus vizinhos sobre algum acontecimento em seu bairro em tempo real. Ele ficará marcado com um pin no mapa, de acordo com a categoria definida para que todos possam ver.</p>
                 <p>Nós selecionamos as notificações mais relevantes sobre o seu bairro e enviamos um alerta para todos os moradores em tempo real.</p>
                 <p>Essas notificações podem ser das seguintes categorias:</p>
-                <ul>
+                <ul id="alert-types">
                     <li><span class="icon icon-alerta"></span><span>Perigo e assaltos</span></li>
                     <li><span class="icon icon-agua"></span><span>Problemas no abastecimento de água</span></li>
                     <li><span class="icon icon-evento"></span><span>Festas ou eventos públicos</span></li>
@@ -63,21 +82,21 @@
                     <li><span class="icon icon-energia"></span><span>Problemas elétricos</span></li>
                 </ul>
             </div>
-            <div class="exemple-cel"></div>
+            <div class="exemple-cel hide-on-med-and-down"></div>
         </section>
         <section class="rb-video">
             <div>
                 <p>Assista nosso vídeo com um exemplo prático</p>
-                <video width="320" height="240" controls>
-                    <source src="video/RobinVideo.mp4" type="video/mp4">
-                </video>
+                <div class="video-container">
+                    <iframe width="853" height="480" src="https://www.youtube.com/embed/qDXbcOcLADw" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
         </section>
-        <section class="rb-description2">
+        <section class="rb-description2 hide-on-med-and-down">
             <div class="box-info">
                 <div class="box-text">
-                    <p>Adicione seus amigos no Robin para ver seus alertas e sua localização</p>
-                    <p>Você pode adicionar um vizinho como amigo, e caso ele aceite, você recebe suas notificações - podendo selecionar como prioritárias - no seu feed de notificações.</p>
+                    <p>Adicione seus amigos para ver seus alertas e sua localização</p>
+                    <p>Você pode adicionar um vizinho como amigo, e caso ele aceite, você recebe suas notificações no seu feed.</p>
                     <p>Também é possível conversar no chat com seu vizinho e manter seu número de celular, email e outras redes sociais ocultos, tendo assim mais privacidade.</p>
                 </div>
             </div>
@@ -97,5 +116,7 @@
         <footer>
             <p>Robin App. Todos os direitos reservados ® 2016</p>
         </footer>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/bin/materialize.min.js"></script>
     </body>
 </html>
