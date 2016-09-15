@@ -8112,6 +8112,48 @@ header {
         .rb-description2 .box-info .box-text p:first-child {
           font-size: 30px; }
 
+.signup {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  display: -webkit- flex;
+  display: -ms- flex;
+  display: -moz- flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -moz-flex-direction: column;
+  align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  -moz-align-items: center;
+  -ms-flex-align: center;
+  background-color: #f1f1f1;
+  padding: 5%; }
+  .signup p {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 50px; }
+  .signup form .row {
+    display: flex;
+    display: -webkit- flex;
+    display: -ms- flex;
+    display: -moz- flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    -moz-justify-content: center;
+    -ms-flex-pack: center; }
+    .signup form .row .input-field {
+      width: 40%;
+      min-width: 200px; }
+    .signup form .row .btn, .signup form .row .btn-large {
+      margin-left: 60px;
+      background-color: #f7ca18;
+      max-width: 120px;
+      float: left; }
+
 footer {
   background-color: #464445;
   padding: 40px 0;

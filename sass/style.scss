@@ -308,6 +308,36 @@ header {
         }
     }
 }
+.signup {
+    @include size(100%,300px);
+    @include displayFlex;
+    @include flexDirection;
+    @include alignItems(center);
+    background-color: #f1f1f1;
+    padding: 5%;
+    p {
+        font-size: 26px;
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 50px;
+    }
+    form {
+        .row{
+            @include displayFlex;
+            @include justifyContent(center);
+            .input-field {
+                width: 40%;
+                min-width: 200px;
+            }
+            .btn {
+                margin-left: 60px;
+                background-color: $orangeDefault;
+                max-width: 120px;
+                float: left;
+            }
+        }
+    }
+}
 footer {
     background-color: #464445;
     padding: 40px 0;
