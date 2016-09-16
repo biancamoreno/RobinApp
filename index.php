@@ -7,8 +7,6 @@
         <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <script src="http://maps.googleapis.com/maps/api/js"></script>
-        <script src="js/maps.js"></script>
     </head>
     <body>
         <header>
@@ -128,6 +126,8 @@
         <footer>
             <p>Robin App. Todos os direitos reservados ® 2016</p>
         </footer>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBR0zGAYKFZF1d69z0gkAtVG_awNaxXJpE&callback=initMap"></script>
+        <script src="js/maps.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/bin/materialize.min.js"></script>
     </body>
