@@ -2,7 +2,8 @@
 <html lang="pt">
     <head>
         <title>Robin App</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
+        <meta name="google-site-verification" content="mcY5mr4zeb6SmwSVqbdU90t8KqsglZA-5u8S_tjfx6A" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
         <link rel="shortcut icon" href="img/robinfavicon.png" type="image/png"/>
         <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
         <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -113,10 +114,10 @@
         </section>
         <section class="signup">
             <p>SEJA O PRIMEIRO A CONHECER O NOSSO APP!</p>
-            <form>
+            <form id="form-mailing" method="post" action="insert.php">
                 <div class="row">
                     <div class="input-field">
-                        <input name="emailNew" type="text" class="validate">
+                        <input name="emailNew" type="email" class="validate">
                         <label class="active" for="emailNew">Email</label>
                     </div>
                     <button class="btn-large waves-effect waves-light right" type="submit" name="action">ENVIAR</button>
@@ -126,7 +127,7 @@
         <footer>
             <p>Robin App. Todos os direitos reservados ® 2016</p>
         </footer>
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBR0zGAYKFZF1d69z0gkAtVG_awNaxXJpE&callback=initMap"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBR0zGAYKFZF1d69z0gkAtVG_awNaxXJpE&amp;sensor=false"></script>
         <script src="js/maps.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/bin/materialize.min.js"></script>

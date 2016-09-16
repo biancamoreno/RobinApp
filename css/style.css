@@ -6335,6 +6335,16 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif; }
 
+.input-field input:focus + label {
+  color: #f7ca18; }
+
+.input-field input:focus {
+  border-bottom: 1px solid #f7ca18;
+  box-shadow: 0 1px 0 0 #f7ca18; }
+
+.btn, .btn-large {
+  background-color: #f7ca18; }
+
 @font-face {
   font-family: 'icomoon';
   src: url("../sass/font-icons/fonts/icomoon.eot?jgsk1b");
@@ -7855,13 +7865,7 @@ header {
   header .form-login {
     margin: 0;
     position: relative; }
-    header .form-login .input-field input:focus + label {
-      color: #f7ca18; }
-    header .form-login .input-field input:focus {
-      border-bottom: 1px solid #f7ca18;
-      box-shadow: 0 1px 0 0 #f7ca18; }
     header .form-login .btn, header .form-login .btn-large {
-      background-color: #f7ca18;
       margin: 0 10px; }
       header .form-login .btn-flat {
         margin: 0 10px; }
