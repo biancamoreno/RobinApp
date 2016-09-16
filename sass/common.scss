@@ -47,12 +47,12 @@ $orangeLogo: #ff9b23;
     -moz-flex-direction: $param;
 }
 .input-field input:focus + label {
-    color: $orangeDefault;
+    color: $orangeDefault!important;
 }
 .input-field input:focus {
-    border-bottom: 1px solid $orangeDefault;
-    box-shadow: 0 1px 0 0 $orangeDefault;
+    border-bottom: 1px solid $orangeDefault!important;
+    box-shadow: 0 1px 0 0 $orangeDefault!important;
 }
 .btn {
-    background-color: $orangeDefault;
+    background-color: $orangeDefault!important;
 }

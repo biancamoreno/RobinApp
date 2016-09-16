@@ -6336,14 +6336,14 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   font-family: 'Open Sans', sans-serif; }
 
 .input-field input:focus + label {
-  color: #f7ca18; }
+  color: #f7ca18 !important; }
 
 .input-field input:focus {
-  border-bottom: 1px solid #f7ca18;
-  box-shadow: 0 1px 0 0 #f7ca18; }
+  border-bottom: 1px solid #f7ca18 !important;
+  box-shadow: 0 1px 0 0 #f7ca18 !important; }
 
 .btn, .btn-large {
-  background-color: #f7ca18; }
+  background-color: #f7ca18 !important; }
 
 @font-face {
   font-family: 'icomoon';
@@ -8152,6 +8152,8 @@ header {
     .signup form .row .input-field {
       width: 40%;
       min-width: 200px; }
+      .signup form .row .input-field:first-child {
+        margin-right: 20px; }
     .signup form .row .btn, .signup form .row .btn-large {
       margin-left: 60px;
       background-color: #f7ca18;

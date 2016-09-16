@@ -114,11 +114,15 @@
         </section>
         <section class="signup">
             <p>SEJA O PRIMEIRO A CONHECER O NOSSO APP!</p>
-            <form id="form-mailing" method="post" action="insert.php">
+            <form id="form-mailing" method="post">
                 <div class="row">
                     <div class="input-field">
-                        <input name="emailNew" type="email" class="validate">
+                        <input name="emailNew" id="emailNew" type="email" class="validate">
                         <label class="active" for="emailNew">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input name="nameNew" id="nameNew" type="text" class="validate">
+                        <label class="active" for="nameNew">Nome</label>
                     </div>
                     <button class="btn-large waves-effect waves-light right" type="submit" name="action">ENVIAR</button>
                 </div>
@@ -131,5 +135,6 @@
         <script src="js/maps.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/bin/materialize.min.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>
