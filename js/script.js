@@ -19,7 +19,7 @@ $(function () {
             $('#emailNew').val("");
             $('#nameNew').val("");
         }
-        e.preventDefault();
+        return false;
     });
 });
 
