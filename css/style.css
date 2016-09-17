@@ -8133,7 +8133,26 @@ header {
   -moz-align-items: center;
   -ms-flex-align: center;
   background-color: #f1f1f1;
-  padding: 5%; }
+  padding: 5%;
+  position: relative; }
+  .signup .sucess-form {
+    visibility: hidden;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(204, 255, 204, 0.8);
+    border-top: 1px solid #009933;
+    border-bottom: 1px solid #009933;
+    position: absolute;
+    z-index: 2;
+    top: calc(50% - 100px);
+    transition: all 0.35s ease; }
+    .signup .sucess-form p {
+      width: 100%;
+      text-align: center;
+      font-size: 22px;
+      color: #009933;
+      margin-top: 80px;
+      text-transform: initial; }
   .signup p {
     font-size: 26px;
     text-transform: uppercase;

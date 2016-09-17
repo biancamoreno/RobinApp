@@ -113,6 +113,9 @@
             </div>
         </section>
         <section class="signup">
+            <div class="sucess-form">
+                <p>Seu email foi cadastrado com sucesso</p>
+            </div>
             <p>SEJA O PRIMEIRO A CONHECER O NOSSO APP!</p>
             <form id="form-mailing" method="post">
                 <div class="row">

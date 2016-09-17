@@ -1,21 +1,26 @@
 $(document).ready(function() {
- Materialize.updateTextFields();
+    Materialize.updateTextFields();
 });
 
- $(function () {
-   $('#form-mailing').submit(function(e){
-       if($('#emailNew').val() == "" || $('#nameNew').val() == ""){
-          e.preventDefault();
-       }else{
-           $.ajax({
-               type: "POST",
-               url: "../insert.php",
-               data: $(this).serializeArray(),
-           });
-
-       }
-       return false;
-   });
+$(function () {
+    $('#form-mailing').submit(function(e){
+        if($('#emailNew').val() == "" || $('#nameNew').val() == ""){
+            e.preventDefault();
+        }else{
+            $.ajax({
+                type: "POST",
+                url: "insert.php",
+                data: $(this).serializeArray(),
+            });
+            $('.sucesso').css("visibility", "visible");
+            $('.sucesso').setTimeout(function(){
+                $(this).css("visibility", "hidden");
+            },3000);
+            $('#emailNew').val("");
+            $('#nameNew').val("");
+        }
+        e.preventDefault();
+    });
 });
 
 //function validaImovel(){
