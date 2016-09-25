@@ -117,7 +117,7 @@
                 <p>Seu email foi cadastrado com sucesso</p>
             </div>
             <p>SEJA O PRIMEIRO A CONHECER O NOSSO APP!</p>
-            <form id="form-mailing" method="post">
+            <form id="form-mailing" method="post" action="">
                 <div class="row">
                     <div class="input-field">
                         <input name="emailNew" id="emailNew" type="email" class="validate">
@@ -138,6 +138,6 @@
         <script src="js/maps.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/bin/materialize.min.js"></script>
-        <script src="js/script.js"></script>
+        <script src="js/script2.js"></script>
     </body>
 </html>
