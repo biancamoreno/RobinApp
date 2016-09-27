@@ -10,6 +10,11 @@
 $orangeDefault: #f7ca18;
 $orangePower: #ff9b23;
 
+@mixin text-overflow(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 @mixin size($width: 100%, $height: $width) {
     width: $width;
     height: $height;

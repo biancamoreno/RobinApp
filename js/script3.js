@@ -18,7 +18,7 @@ $(document).ready(function(){
     $('#form-signup').submit(function(e){
         $.ajax({
             type: "POST",
-            url: "insert.php",
+            url: "insert2.php",
             data: $(this).serializeArray(),
         });
         $('.sucess-form').css("visibility", "visible");
