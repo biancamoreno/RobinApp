@@ -8157,7 +8157,7 @@ header {
   position: relative; }
   .signup .sucess-form {
     visibility: hidden;
-    width: 100%;
+    width: 100vw;
     height: 60px;
     background-color: rgba(204, 255, 204, 0.8);
     border-top: 1px solid #009933;
@@ -8165,6 +8165,7 @@ header {
     position: fixed;
     z-index: 2;
     top: 0;
+    left: 0;
     transition: all 0.35s ease; }
     .signup .sucess-form p {
       width: 100%;
@@ -8415,7 +8416,13 @@ footer {
       z-index: 998;
       color: #9e9e9e;
       font-size: 20px;
-      text-align: center; } }
+      text-align: center; }
+
+  .signup #form-mailing .row {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -moz-flex-wrap: wrap; } }
 @media only screen and (max-width: 992px) {
   .rb-video div {
     width: 95%;

@@ -12,5 +12,7 @@ $conn = new mysqli($servername, $username, $password, $db);
 
 $sql = "INSERT INTO T_ROBINAPP_MAILING (EMAIL,NOME) VALUES ('$email','$nome')";
 
+$conn->query($sql);
+
 $conn->close();
 ?>

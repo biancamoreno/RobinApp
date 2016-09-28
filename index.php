@@ -1,9 +1,12 @@
 <DOCTYPE! html>
     <html lang="pt">
         <head>
-            <title>Robin App</title>
+            <title>Robin App - seu bairro na sua mão!</title>
             <meta name="google-site-verification" content="mcY5mr4zeb6SmwSVqbdU90t8KqsglZA-5u8S_tjfx6A" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+            <meta name="keywords" content="vizinhança, aplicativo, vizinho, informações, bairro, localização, informação "/>
+            <meta name="description" content="Aplicativo para te notificar os acontecimentos que você precisa saber no seu bairro!">
+            <meta property="og:image" content="http://www.robinapp.com.br/img/robin.png" />
             <link rel="shortcut icon" href="img/robinfavicon.png" type="image/png"/>
             <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
             <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -72,12 +75,12 @@
                     <p>Nós selecionamos as notificações mais relevantes sobre o seu bairro e enviamos um alerta para todos os moradores em tempo real.</p>
                     <p>Essas notificações podem ser das seguintes categorias:</p>
                     <ul id="alert-types">
-                        <li><span class="icon icon-alerta"></span><span>Perigo e assaltos</span></li>
+                        <li><span class="icon icon-alerta"></span><span>Perigo e violências</span></li>
                         <li><span class="icon icon-agua"></span><span>Problemas no abastecimento de água</span></li>
                         <li><span class="icon icon-evento"></span><span>Festas ou eventos públicos</span></li>
                         <li><span class="icon icon-incendio"></span><span>Incêndios</span></li>
                         <li><span class="icon icon-acidente"></span><span>Acidentes</span></li>
-                        <li><span class="icon icon-construcao"></span><span>Construções</span></li>
+                        <li><span class="icon icon-construcao"></span><span>Construções e interdições</span></li>
                         <li><span class="icon icon-energia"></span><span>Problemas elétricos</span></li>
                     </ul>
                 </div>
@@ -139,6 +142,16 @@
             <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
             <script type="text/javascript" src="js/bin/materialize.min.js"></script>
             <script src="js/script3.js"></script>
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-84867622-1', 'auto');
+                ga('send', 'pageview');
+
+            </script>
         </body>
     </html>
-</DOCTYPE!>
+    </DOCTYPE!>
