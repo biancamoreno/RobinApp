@@ -223,35 +223,6 @@ header {
                 @include alignItems;
                 span {
                     font-size: 14px;
-                    &.icon {
-                        @include size(20px);
-                        margin-right: 10px;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        &.icon-{
-                            &alerta {
-                                background-image: url(../img/alert/perigo.jpg);
-                            }
-                            &agua {
-                                background-image: url(../img/alert/agua.jpg);
-                            }
-                            &evento {
-                                background-image: url(../img/alert/evento.jpg);
-                            }
-                            &incendio {
-                                background-image: url(../img/alert/incendio.jpg);
-                            }
-                            &acidente {
-                                background-image: url(../img/alert/acidente.jpg);
-                            }
-                            &construcao {
-                                background-image: url(../img/alert/construcao.jpg);
-                            }
-                            &energia {
-                                background-image: url(../img/alert/energia.jpg);
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -430,6 +401,50 @@ footer {
 
 .modal-add {
     display: none;
+    @include size(500px, 580px);
+    position: absolute;
+    top: 50%!important;
+    left: 50%;
+    margin-top: -290px;
+    margin-left: -250px;
+    background-color: #fff;
+    .modal-content {
+        padding: 20px;
+        h4 {
+            color: #5a5a5a;
+            font-size: 20px;
+            line-height: 20px;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+        & > div {
+            margin-bottom: 20px;
+            & > span {
+                color: #5a5a5a;
+            }
+            .icon {
+                opacity: 0.3;
+                cursor: pointer;
+                &:hover, &.active {
+                    opacity: 1;
+                }
+            }
+        }
+        #form-pin {
+            textarea {
+                height: 112px;
+            }
+            label {
+                margin-bottom: 2px;
+            }
+        }
+        #googleMapModal {
+            @include size(100%, 100px);
+        }
+    }
+    .modal-footer {
+        padding: 0 20px;
+    }
 }
 
 .filter-box {
@@ -460,41 +475,6 @@ footer {
         li {
             padding: 1px 10px;
             @include displayFlex;
-            .icon {
-                @include size(15px);
-                margin-right: 8px;
-                background-repeat: no-repeat;
-                background-size: cover;
-                &.icon-{
-                    &alerta {
-                        background-image: url(../img/alert/perigo.jpg);
-                    }
-                    &agua {
-                        background-image: url(../img/alert/agua.jpg);
-                    }
-                    &evento {
-                        background-image: url(../img/alert/evento.jpg);
-                    }
-                    &incendio {
-                        background-image: url(../img/alert/incendio.jpg);
-                    }
-                    &acidente {
-                        background-image: url(../img/alert/acidente.jpg);
-                    }
-                    &construcao {
-                        background-image: url(../img/alert/construcao.jpg);
-                    }
-                    &energia {
-                        background-image: url(../img/alert/energia.jpg);
-                    }
-                    &users.amigos {
-                        color: #DF01A5;
-                    }
-                    &users.outros {
-                        color: #cecece;
-                    }
-                }
-            }
             span{
                 color: #9e9e9e;
                 font-size: 13px;
@@ -507,7 +487,7 @@ footer {
     position: absolute;
     right: 0;
     top: 60px;
-    @include size(400px, 100%);
+    @include size(318px, 100%);
     background-color: #fff;
     box-shadow: 0 5px 11px 3px #cecece;
     .tabs {
@@ -523,7 +503,7 @@ footer {
             span {
                 text-transform: uppercase;
                 color: #9e9e9e;
-                font-size: 13px;
+                font-size: 14px;
                 line-height: 40px;
             }
             &.active {
@@ -531,12 +511,6 @@ footer {
                 span {
                     color: #fff;
                 }
-            }
-            &:nth-child(3) {
-                min-width: 100px;
-            }
-            &:nth-child(5) {
-                min-width: 90px;
             }
         }
     }
@@ -558,8 +532,9 @@ footer {
                 background-size: cover;
             }
             .content-msg {
+                width: 200px;
                 p{
-                    width: 250px;
+                    width: 200px;
                     color: #9e9e9e;
                     margin-bottom: 2px;
                     &.name-user {
@@ -635,7 +610,12 @@ footer {
     .signup {
         #form-mailing {
             .row{
-                @include flexWrap;
+                @include flexDirection;
+                .input-field {
+                    &:first-child {
+                        margin-right: 0px;
+                    }
+                }
             }
         }
     }

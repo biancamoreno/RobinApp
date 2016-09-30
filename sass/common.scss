@@ -7,6 +7,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+body.home-page {
+    overflow: hidden;
+}
+
 $orangeDefault: #f7ca18;
 $orangePower: #ff9b23;
 
@@ -60,4 +64,56 @@ $orangePower: #ff9b23;
 }
 .btn {
     background-color: $orangeDefault!important;
+}
+.icon {
+    @include size(15px);
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    &.icon-{
+        &alerta {
+            background-image: url(../img/alert/perigo.jpg);
+        }
+        &agua {
+            background-image: url(../img/alert/agua.jpg);
+        }
+        &evento {
+            background-image: url(../img/alert/evento.jpg);
+        }
+        &incendio {
+            background-image: url(../img/alert/incendio.jpg);
+        }
+        &acidente {
+            background-image: url(../img/alert/acidente.jpg);
+        }
+        &construcao {
+            background-image: url(../img/alert/construcao.jpg);
+        }
+        &energia {
+            background-image: url(../img/alert/energia.jpg);
+        }
+        &users.amigos {
+            color: #DF01A5!important;
+        }
+        &users.outros {
+            color: #cecece;
+        }
+    }
+}
+.browser-default {
+    padding: 0!important;
+    input, textarea {
+        background-color: #fff;
+        border: 1px solid #d1d1d1;
+        border-radius: 11px;
+        resize: none;
+        outline: none;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    label {
+        font-size: 15px;
+        color: #5a5a5a;
+    }
 }

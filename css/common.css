@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif; }
 
+body.home-page {
+  overflow: hidden; }
+
 .input-field input:focus + label {
   color: #f7ca18 !important; }
 
@@ -15,5 +18,45 @@
 
 .btn {
   background-color: #f7ca18 !important; }
+
+.icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block; }
+  .icon.icon-alerta {
+    background-image: url(../img/alert/perigo.jpg); }
+  .icon.icon-agua {
+    background-image: url(../img/alert/agua.jpg); }
+  .icon.icon-evento {
+    background-image: url(../img/alert/evento.jpg); }
+  .icon.icon-incendio {
+    background-image: url(../img/alert/incendio.jpg); }
+  .icon.icon-acidente {
+    background-image: url(../img/alert/acidente.jpg); }
+  .icon.icon-construcao {
+    background-image: url(../img/alert/construcao.jpg); }
+  .icon.icon-energia {
+    background-image: url(../img/alert/energia.jpg); }
+  .icon.icon-users.amigos {
+    color: #DF01A5 !important; }
+  .icon.icon-users.outros {
+    color: #cecece; }
+
+.browser-default {
+  padding: 0 !important; }
+  .browser-default input, .browser-default textarea {
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+    border-radius: 11px;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box; }
+  .browser-default label {
+    font-size: 15px;
+    color: #5a5a5a; }
 
 /*# sourceMappingURL=common.css.map */

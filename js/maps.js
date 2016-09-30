@@ -13,8 +13,14 @@ function initialize()
     zoom:18,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
+  var mapPropModal = {
+    center:myCenter,
+    zoom:25,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
 
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  var mapModal=new google.maps.Map(document.getElementById("googleMapModal"),mapPropModal);
 
   // INSTANCIA PINS
 
