@@ -15,7 +15,7 @@ function initialize()
   };
   var mapPropModal = {
     center:myCenter,
-    zoom:25,
+    zoom:18,
     mapTypeId:google.maps.MapTypeId.ROADMAP
   };
 
@@ -43,6 +43,10 @@ function initialize()
   var evento1=new google.maps.Marker({
     position:eventoLocal1,
     icon:'img/pin/mini/pin_evento.png'
+  });
+
+  var pinInitialModal=new google.maps.Marker({
+    position:myCenter
   });
 
   // INFOWINDOWS
@@ -88,6 +92,7 @@ function initialize()
   faltaAgua1.setMap(map);
   faltaAgua2.setMap(map);
   evento1.setMap(map);
+  pinInitialModal.setMap(mapModal);
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

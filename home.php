@@ -10,14 +10,22 @@
             <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         </head>
         <body class="home-page">
+            <div id="modalDelete">
+                <div class="modal-content center">
+                    <p>Tem certeza que deseja excluir sua conta? <span class="icon-sad"></span></p>
+                    <button class="btn waves-effect waves-light" name="action6">CANCELAR</button>
+                    <button class="btn-default" name="action7">EXCLUIR</button>
+                </div>
+            </div>
             <header class="header-default">
                 <div class="r-logo"></div>
                 <div class="picture-user circle right dropdown-button" data-beloworigin="true" data-activates='dropdown1'></div>
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><a href="#!">Configurações</a></li>
                     <li><a href="#!">Sair</a></li>
+                    <hr>
+                    <li><a class="modal-delete" href="#modalDelete">Excluir conta</a></li>
                 </ul>
-
             </header>
             <section class="local-map">
                 <div id="googleMap"></div>
@@ -64,26 +72,24 @@
                             </div>
                         </form>
                         <div id="googleMapModal"></div>
-                    </div>
-                    <div class="modal-footer">
-                       <button class="btn waves-effect waves-light left" type="submit" name="action">ENVIAR</button>
+                        <button class="btn waves-effect waves-light left" type="submit" name="action">ADICIONAR</button>
                     </div>
                 </div>
                 </div>
             <div class="box-right">
                 <div class="tabs">
-                    <div class="tab active"><span class="icon-location"></span></div>
-                    <div class="tab"><span class="icon-users"></span></div>
-                    <div class="tab"><span class="icon-envelop"></span></div>
-                    <div class="tab"><span class="icon-bubbles4"></span></div>
-                    <div class="tab"><span class="icon-bullhorn"></span></div>
+                    <div class="tab-feed tab active"><span class="icon-location"></span></div>
+                    <div class="tab-friends tab"><span class="icon-users"></span></div>
+                    <div class="tab-msgs tab"><span class="icon-envelop"></span></div>
+                    <div class="tab-groups tab"><span class="icon-bubbles4"></span></div>
+                    <div class="tab-ads tab"><span class="icon-bullhorn"></span></div>
                 </div>
-                <ul class="feed">
+                <ul class="lists-box-right feed">
                     <li>
                         <div class="photo-user circle"></div>
                         <div class="content-msg">
                             <p class="name-user">Will Smith</p>
-                            <p class="notification-feed">Marcou um evento próximo a Washington Square Park.</p>
+                            <p class="simple">Marcou um evento próximo a Washington Square Park.</p>
                             <p class="time-notification">2 min. atrás</p>
                         </div>
                         <div class="type-notification evento"></div>
@@ -92,10 +98,134 @@
                         <div class="photo-user circle"></div>
                         <div class="content-msg">
                             <p class="name-user">Will Smith</p>
-                            <p class="notification-feed">Marcou um evento próximo a Washington Square Park.</p>
+                            <p class="simple">Marcou um evento próximo a Washington Square Park.</p>
                             <p class="time-notification">2 min. atrás</p>
                         </div>
-                        <div class="type-notification event"></div>
+                        <div class="type-notification evento"></div>
+                    </li>
+                </ul>
+                <ul class="lists-box-right list-friends">
+                    <li>
+                        <div class="photo-user circle"></div>
+                        <div class="content-msg">
+                            <p class="name-user">Will Smith</p>
+                            <p class="simple">Rua Tenente Afonso, 230.</p>
+                            <div>
+                                <button class="btn-default" name="action2">VER NO MAPA</button>
+                                <button class="btn-default" name="action3">MENSAGEM</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="photo-user circle"></div>
+                        <div class="content-msg">
+                            <p class="name-user">Will Smith</p>
+                            <p class="simple">Rua Tenente Afonso, 230.</p>
+                            <div>
+                                <button class="btn-default" name="action2">VER NO MAPA</button>
+                                <button class="btn-default" name="action3">MENSAGEM</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="photo-user circle"></div>
+                        <div class="content-msg">
+                            <p class="name-user">Will Smith</p>
+                            <p class="simple">Rua Tenente Afonso, 230.</p>
+                            <div>
+                                <button class="btn-default" name="action2">VER NO MAPA</button>
+                                <button class="btn-default" name="action3">MENSAGEM</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="lists-box-right messages">
+                    <li>
+                        <div class="photo-user circle"></div>
+                        <div class="content-msg">
+                            <p class="name-user">Will Smith</p>
+                            <p class="simple">Podemos combinar.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="photo-user circle"></div>
+                        <div class="content-msg">
+                            <p class="name-user">Felipão</p>
+                            <p class="simple">Vou falar com o Julião.</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="lists-box-right groups row">
+                    <button class="btn waves-effect waves-light left col s12" name="action4">NOVO GRUPO</button>
+                    <li>
+                        <div class="content-msg">
+                            <p class="featured">Caronas</p>
+                            <p class="simple">Grupo destinado a vizinhos do bairro Aclimação para disponibilização de caronas.</p>
+                        </div>
+                        <button class="btn-default" name="action5">DEIXAR DE PARTICIPAR</button>
+                    </li>
+                    <li>
+                        <div class="content-msg">
+                            <p class="featured">Festa Junina 2016</p>
+                            <p class="simple">Estamos organizando uma festa para a despedida de 2016 do pessoal da Vl. Mariana. Junte-se a nós!</p>
+                        </div>
+                        <button class="btn-default" name="action5">DEIXAR DE PARTICIPAR</button>
+                    </li>
+                    <li>
+                        <div class="content-msg">
+                            <p class="featured">Policiamento no Bairro Sta. Lúcia</p>
+                            <p class="simple">Nos juntamos para reivindicar mais segurança no bairro Sta. Lúcia através de um abaixo assinado</p>
+                        </div>
+                        <button class="btn-default" name="action5">PARTICIPAR</button>
+                    </li>
+                    <li>
+                        <div class="content-msg">
+                            <p class="featured">Ajuda para o Orfanato Júlia Maria</p>
+                            <p class="simple">Estamos arrecadando roupas, sapatos, utensílios domésticos, tudo o que servir para as crianças ou para o bazar de lá.</p>
+                        </div>
+                        <button class="btn-default" name="action5">PARTICIPAR</button>
+                    </li>
+                    <li>
+                        <div class="content-msg">
+                            <p class="featured">Medidas para assaltos no ponto da Rua 5</p>
+                            <p class="simple">Este grupo está reunindo pessoas para cobrarmos da prefeitura por abaixo assinado mais segurança no ponto de ônibus da Rua 5.</p>
+                        </div>
+                        <button class="btn-default" name="action5">PARTICIPAR</button>
+                    </li>
+                </ul>
+                <ul class="lists-box-right local-ads">
+                    <li>
+                        <div class="photo-product"></div>
+                        <div class="content-msg">
+                            <p class="featured">Tênis Importado</p>
+                            <p class="simple">num. 39, pouco usado</p>
+                            <p class="price-product">R$ 30,00</p>
+                        </div>
+                        <div class="km-local">
+                            <p>4 km</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="photo-product"></div>
+                        <div class="content-msg">
+                            <p class="featured">Jeans Preto</p>
+                            <p class="simple">num. 42, usado</p>
+                            <p class="price-product">R$ 15,00</p>
+                        </div>
+                        <div class="km-local">
+                            <p>2,5 km</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="photo-product"></div>
+                        <div class="content-msg">
+                            <p class="featured">Batedeira Charme</p>
+                            <p class="simple">Lacrada</p>
+                            <p class="price-product">R$ 100,00</p>
+                        </div>
+                        <div class="km-local">
+                            <p>3,2 km</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -110,6 +240,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('.modal-trigger').leanModal();
+        $('.modal-delete').leanModal();
     });
 </script>
 </DOCTYPE!>

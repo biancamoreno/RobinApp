@@ -64,6 +64,20 @@ $orangePower: #ff9b23;
 }
 .btn {
     background-color: $orangeDefault!important;
+    &:focus {
+        background-color: $orangeDefault!important;
+    }
+}
+.btn-default {
+    background: transparent;
+    border: 1px solid #9e9e9e;
+    color: #9e9e9e;
+    border-radius: 6px;
+    padding: 4px;
+    font-size: 12px;
+    &:focus {
+        background-color: transparent!important;
+    }
 }
 .icon {
     @include size(15px);

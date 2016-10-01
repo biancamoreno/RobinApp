@@ -18,6 +18,18 @@ body.home-page {
 
 .btn {
   background-color: #f7ca18 !important; }
+  .btn:focus {
+    background-color: #f7ca18 !important; }
+
+.btn-default {
+  background: transparent;
+  border: 1px solid #9e9e9e;
+  color: #9e9e9e;
+  border-radius: 6px;
+  padding: 4px;
+  font-size: 12px; }
+  .btn-default:focus {
+    background-color: transparent !important; }
 
 .icon {
   width: 15px;
