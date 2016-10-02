@@ -49,17 +49,20 @@
                         <h4>Novo Alerta</h4>
                         <div>
                             <span>Tipo</span>
-                            <div>
-                                <span class="icon icon-alerta active"></span>
-                                <span class="icon icon-agua"></span>
-                                <span class="icon icon-evento"></span>
-                                <span class="icon icon-incendio"></span>
-                                <span class="icon icon-acidente"></span>
-                                <span class="icon icon-construcao"></span>
-                                <span class="icon icon-energia"></span>
+                            <div id="pin-alerts">
+                                <span value="1" class="icon icon-alerta active"></span>
+                                <span value="2" class="icon icon-agua"></span>
+                                <span value="3" class="icon icon-evento"></span>
+                                <span value="4" class="icon icon-incendio"></span>
+                                <span value="5" class="icon icon-acidente"></span>
+                                <span value="6" class="icon icon-construcao"></span>
+                                <span value="7" class="icon icon-energia"></span>
                             </div>
                         </div>
                         <form id="form-pin" method="post" action="">
+                            <input type="hidden" name="alertPin" id="alertPin" value="1">
+                            <input type="hidden" name="latPin" id="latPin" value="-23.574761">
+                            <input type="hidden" name="lngPin" id="lngPin" value="-46.622472">
                             <div class="row">
                                 <div class="browser-default col s12">
                                     <label class="active" for="titlePin">Título</label>
@@ -70,9 +73,11 @@
                                     <textarea name="descriptionPin" id="descriptionPin" type="text"></textarea>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div id="googleMapModal"></div>
+                            </div>
+                            <button class="btn waves-effect waves-light left" type="submit" name="action">ADICIONAR</button>
                         </form>
-                        <div id="googleMapModal"></div>
-                        <button class="btn waves-effect waves-light left" type="submit" name="action">ADICIONAR</button>
                     </div>
                 </div>
                 </div>
