@@ -13,6 +13,33 @@ $(document).ready(function(){
         return false;
     });
 
+    $("#form-signup-update").submit(function () {
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: 'signup_update.php',
+            type: 'POST',
+            data: formData,
+            success: function (data) {
+                $('.sucess-form').css("visibility", "visible");
+                setTimeout(function(){ $('.sucess-form').css("visibility", "hidden"); }, 3000);
+                $('input').val("");
+            },
+            cache: false,
+            contentType: false,
+            processData: false,
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                if (myXhr.upload) {
+                    myXhr.upload.addEventListener('progress', function () {
+                    }, false);
+                }
+                return myXhr;
+            }
+        });
+        return false;
+    });
+
     $("#form-signup").submit(function () {
         var formData = new FormData(this);
 
