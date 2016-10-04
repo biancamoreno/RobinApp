@@ -18,6 +18,34 @@ function  initMap(){
     });
   });
 
+  var input = document.getElementById('map-search');
+  var searchBox = new google.maps.places.SearchBox(input);
+  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
+
+  searchBox.addListener('places_changed', function() {
+    var places = searchBox.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+    // For each place, get the icon, name and location.
+    var bounds = new google.maps.LatLngBounds();
+    places.forEach(function(place) {
+
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    map.fitBounds(bounds);
+  });
+
   var geoQuery = geoFire.query({
     center: [-23.574761, -46.622472],
     radius: 5
@@ -40,7 +68,6 @@ var markersArray = [];
 function removePin(key){
   markersArray[key].setMap(null);
   markersArray.splice( key, 1 );
-  console.log(markersArray);
   $('#tab-feed li[data-id="'+key+'"]').remove();
 }
 

@@ -1,4 +1,4 @@
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDq-2m02_cCYYsae2qzLK21atyxvYmS0sQ"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDq-2m02_cCYYsae2qzLK21atyxvYmS0sQ&libraries=places"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/bin/materialize.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>

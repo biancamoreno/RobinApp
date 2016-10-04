@@ -3,6 +3,17 @@
 @import "font-icons/style";
 
 
+#map-search{
+    width: 100%;
+    max-width: 500px;
+    color: #FFF;
+    /*margin-top: 10px;
+    background-color: #fff;
+    padding: 0 15px;
+    -webkit-box-shadow: 3px 3px 3px 0 rgba(00000,0000,000,0.2);
+    box-shadow: 3px 3px 3px 0 rgba(00000,0000,000,0.2);*/
+}
+
 header {
     @include size(100%, 150px);
     padding: 16px;
@@ -16,6 +27,12 @@ header {
         background-repeat: no-repeat;
         float: left;
     }
+
+    .header-search{
+        width: 100%;
+        max-width: 500px;
+    }
+
     .form-login {
         margin: 0;
         position: relative;

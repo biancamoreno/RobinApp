@@ -7,7 +7,7 @@
                 <div class="sucess-form">
                     <p>Você foi cadastrado com sucesso!</p>
                 </div>
-                <p>Preencha seus dados e comece a usufruir o seu bairro!</p>
+                <p>Faça o cadastro e acompanhe seu bairro em tempo real!</p>
                 <form id="form-signup" method="post" action="">
                     <div class="row">
                         <div class="input-field col s6">

@@ -9,6 +9,9 @@
             </div>
             <header class="header-default">
                 <div class="r-logo"></div>
+                <div class="header-search">
+                    <input type="text" placeholder="Buscar um local" id="map-search">
+                </div>
                 <div class="picture-user circle right dropdown-button" data-beloworigin="true" data-activates='dropdown1'></div>
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><a href="#!">Configurações</a></li>
