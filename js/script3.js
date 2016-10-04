@@ -166,7 +166,8 @@ $(document).ready(function(){
 
 
 var database = firebase.database();
-
+var firebaseRef = database.ref("locations");
+var geoFire = new GeoFire(firebaseRef);
 
 
 $('#form-login').submit(function() {
@@ -233,9 +234,9 @@ $('#form-signup').submit(function() {
             displayName: fullname
         })
 
-        firebase.database().ref('usuarios/'+user.uid).set(data);
-        firebase.database().ref('usuarios/'+user.uid+'/endereco').set(dataEndereco);
-        firebase.database().ref('usuarios/'+user.uid+'/configuracoees').set(dataConfiguracoes);
+        database.ref('usuarios/'+user.uid).set(data);
+        database.ref('usuarios/'+user.uid+'/endereco').set(dataEndereco);
+        database.ref('usuarios/'+user.uid+'/configuracoees').set(dataConfiguracoes);
 
         window.location=URL_BASE+"/home.php";
 
