@@ -2,6 +2,7 @@
 @import "common";
 @import "font-icons/style";
 
+
 header {
     @include size(100%, 150px);
     padding: 16px;
@@ -27,7 +28,7 @@ header {
         .row {
             margin: 0;
         }
-        &:hover {
+        /*&:hover {
             &:after {
                 content: 'EM BREVE';
                 position: absolute;
@@ -43,7 +44,7 @@ header {
                 background-color: #fff;
                 z-index: 999;
             }
-        }
+        }*/
     }
     .picture-user {
         @include size(50px);
@@ -632,7 +633,7 @@ footer {
             .type-notification {
                 @include size(22px);
                 background-repeat: no-repeat;
-                &.alerta {
+                &.perigo {
                     background-image: url(../img/alert/perigo.jpg);
                 }
                 &.agua {

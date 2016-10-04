@@ -38,7 +38,7 @@ body.home-page {
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block; }
-  .icon.icon-alerta {
+  .icon.icon-perigo {
     background-image: url(../img/alert/perigo.jpg); }
   .icon.icon-agua {
     background-image: url(../img/alert/agua.jpg); }

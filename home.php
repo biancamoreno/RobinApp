@@ -1,14 +1,4 @@
-<DOCTYPE! html>
-    <html lang="pt">
-        <head>
-            <title>Robin App</title>
-            <meta name="google-site-verification" content="mcY5mr4zeb6SmwSVqbdU90t8KqsglZA-5u8S_tjfx6A" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
-            <link rel="shortcut icon" href="img/robinfavicon.png" type="image/png"/>
-            <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-            <link rel="stylesheet" type="text/css" href="css/style.css">
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        </head>
+<?php include("includes/header.php") ?>
         <body class="home-page">
             <div id="modalDelete">
                 <div class="modal-content center">
@@ -22,7 +12,7 @@
                 <div class="picture-user circle right dropdown-button" data-beloworigin="true" data-activates='dropdown1'></div>
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><a href="#!">Configurações</a></li>
-                    <li><a href="#!">Sair</a></li>
+                    <li><a href="#!" id="logoutUser">Sair</a></li>
                     <hr>
                     <li><a class="modal-delete" href="#modalDelete">Excluir conta</a></li>
                 </ul>
@@ -32,7 +22,7 @@
                 <div class="filter-box">
                     <div class="header-filter"><span>Filtros</span><i class="icon-ctrl"></i></div>
                     <ul id="alert-types">
-                        <li><span class="icon icon-alerta"></span><span>Perigo e assalto</span></li>
+                        <li><span class="icon icon-perigo"></span><span>Perigo e assalto</span></li>
                         <li><span class="icon icon-agua"></span><span>Falta de água</span></li>
                         <li><span class="icon icon-evento"></span><span>Evento</span></li>
                         <li><span class="icon icon-incendio"></span><span>Incêndio</span></li>
@@ -43,23 +33,23 @@
                         <li><span class="icon icon-users outros"></span><span>Outros Vizinhos</span></li>
                     </ul>
                 </div>
-                <a class="btn-floating btn-large waves-effect waves-light modal-trigger" href="#modal-add"><i class="icon-plus"></i></a>
+                <a class="btn-floating btn-large waves-effect waves-light modal-trigger modal-newpin" href="#modal-add"><i class="icon-plus"></i></a>
                 <div id="modal-add" class="modal-add">
                     <div class="modal-content">
                         <h4>Novo Alerta</h4>
-                        <div>
-                            <span>Tipo</span>
-                            <div id="pin-alerts">
-                                <span value="1" class="icon icon-alerta active"></span>
-                                <span value="2" class="icon icon-agua"></span>
-                                <span value="3" class="icon icon-evento"></span>
-                                <span value="4" class="icon icon-incendio"></span>
-                                <span value="5" class="icon icon-acidente"></span>
-                                <span value="6" class="icon icon-construcao"></span>
-                                <span value="7" class="icon icon-energia"></span>
-                            </div>
-                        </div>
                         <form id="form-pin" method="post" action="">
+                            <div>
+                                <span>Tipo</span>
+                                <div id="pin-alerts">
+                                    <span value="1" data-value="perigo" class="icon icon-perigo active"></span>
+                                    <span value="2" data-value="agua" class="icon icon-agua"></span>
+                                    <span value="3" data-value="evento" class="icon icon-evento"></span>
+                                    <span value="4" data-value="incendio" class="icon icon-incendio"></span>
+                                    <span value="5" data-value="acidente" class="icon icon-acidente"></span>
+                                    <span value="6" data-value="construcao" class="icon icon-construcao"></span>
+                                    <span value="7" data-value="energia" class="icon icon-energia"></span>
+                                </div>
+                            </div>
                             <input type="hidden" name="alertPin" id="alertPin" value="1">
                             <input type="hidden" name="latPin" id="latPin" value="-23.574761">
                             <input type="hidden" name="lngPin" id="lngPin" value="-46.622472">
@@ -89,26 +79,7 @@
                     <div class="tab-groups tab"><span class="icon-bubbles4"></span></div>
                     <div class="tab-ads tab"><span class="icon-bullhorn"></span></div>
                 </div>
-                <ul class="lists-box-right feed">
-                    <li>
-                        <div class="photo-user circle"></div>
-                        <div class="content-msg">
-                            <p class="name-user">Will Smith</p>
-                            <p class="simple">Marcou um evento próximo a Washington Square Park.</p>
-                            <p class="time-notification">2 min. atrás</p>
-                        </div>
-                        <div class="type-notification evento"></div>
-                    </li>
-                    <li>
-                        <div class="photo-user circle"></div>
-                        <div class="content-msg">
-                            <p class="name-user">Will Smith</p>
-                            <p class="simple">Marcou um evento próximo a Washington Square Park.</p>
-                            <p class="time-notification">2 min. atrás</p>
-                        </div>
-                        <div class="type-notification evento"></div>
-                    </li>
-                </ul>
+                <ul class="lists-box-right feed" id="tab-feed"></ul>
                 <ul class="lists-box-right list-friends">
                     <li>
                         <div class="photo-user circle"></div>
@@ -235,17 +206,4 @@
                 </ul>
             </div>
             </section>
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBR0zGAYKFZF1d69z0gkAtVG_awNaxXJpE&amp;sensor=false"></script>
-        <script src="js/maps.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/bin/materialize.min.js"></script>
-        <script src="js/script3.js"></script>
-        </body>
-    </html>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.modal-trigger').leanModal();
-        $('.modal-delete').leanModal();
-    });
-</script>
-</DOCTYPE!>
+        <?php include("includes/footer.php") ?>

@@ -1,59 +1,49 @@
-<DOCTYPE! html>
-    <html lang="pt">
-        <head>
-            <title>Robin App - seu bairro na sua mão!</title>
-            <meta name="google-site-verification" content="mcY5mr4zeb6SmwSVqbdU90t8KqsglZA-5u8S_tjfx6A" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
-            <meta name="keywords" content="vizinhança, aplicativo, vizinho, informações, bairro, localização, informação "/>
-            <meta name="description" content="Aplicativo para te notificar os acontecimentos que você precisa saber no seu bairro!">
-            <meta property="og:image" content="http://www.robinapp.com.br/img/robin.png" />
-            <link rel="shortcut icon" href="img/robinfavicon.png" type="image/png"/>
-            <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
-            <link rel="stylesheet" type="text/css" href="css/style.css">
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        </head>
-        <body>
+    <?php include("includes/header.php") ?>
             <header>
                 <div class="r-logo"></div>
                 <div class="row form-login">
-                    <form class="col s12">
+                    <form class="col s12" id="form-login">
                         <div class="row">
-                            <div class="input-field col s6">
+                            <div class="input-field col s3">
                                 <input name="email" type="text" class="validate">
                                 <label class="active" for="email">Email</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s3">
                                 <input name="password" type="password" class="validate">
                                 <label class="active" for="password">Senha</label>
                             </div>
+                            <div class="input-field col s6">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">ENTRAR</button>
+                                <a href="cadastro.php" class="waves-effect waves-teal btn-flat">Cadastrar</a>
+                            </div>
                         </div>
-                        <button class="btn waves-effect waves-light right" type="submit" name="action">ENTRAR</button>
-                        <a class="waves-effect waves-teal btn-flat right">Cadastrar</a>
+                        
+                        
                     </form>
                 </div>
                 <!--
-<div class="box-available">
-<i class="icon-display"></i>
-<div>
-<span>Acesso via</span>
-<span>Browser</span>
-</div>
-</div>
-<div class="box-available">
-<i class="icon-play3"></i>
-<div>
-<span>Download Disponível</span>
-<span>Google Play</span>
-</div>
-</div>
-<div class="box-available">
-<i class="icon-appleinc"></i>
-<div>
-<span>Download Disponível</span>
-<span>App Store</span>
-</div>
-</div>
--->
+                <div class="box-available">
+                <i class="icon-display"></i>
+                <div>
+                <span>Acesso via</span>
+                <span>Browser</span>
+                </div>
+                </div>
+                <div class="box-available">
+                <i class="icon-play3"></i>
+                <div>
+                <span>Download Disponível</span>
+                <span>Google Play</span>
+                </div>
+                </div>
+                <div class="box-available">
+                <i class="icon-appleinc"></i>
+                <div>
+                <span>Download Disponível</span>
+                <span>App Store</span>
+                </div>
+                </div>
+                -->
             </header>
             <section class="drag-map">
                 <div class="hide-on-med-and-down">
@@ -137,21 +127,4 @@
             <footer>
                 <p>Robin App. Todos os direitos reservados ® 2016</p>
             </footer>
-            <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBR0zGAYKFZF1d69z0gkAtVG_awNaxXJpE&amp;sensor=false"></script>
-            <script src="js/maps.js"></script>
-            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-            <script type="text/javascript" src="js/bin/materialize.min.js"></script>
-            <script src="js/script3.js?v=20161001"></script>
-            <script>
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                                        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-84867622-1', 'auto');
-                ga('send', 'pageview');
-
-            </script>
-        </body>
-    </html>
-    </DOCTYPE!>
+            <?php include("includes/footer.php") ?>

@@ -6367,7 +6367,7 @@ body.home-page {
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block; }
-  .icon.icon-alerta {
+  .icon.icon-perigo {
     background-image: url(../img/alert/perigo.jpg); }
   .icon.icon-agua {
     background-image: url(../img/alert/agua.jpg); }
@@ -7919,28 +7919,30 @@ header {
     float: left; }
   header .form-login {
     margin: 0;
-    position: relative; }
+    position: relative;
+    /*&:hover {
+        &:after {
+            content: 'EM BREVE';
+            position: absolute;
+            @include size(100%, 88%);
+            padding-top: 41px;
+            left: 0;
+            top: 0;
+            color: #9e9e9e;
+            font-size: 26px;
+            text-align: center;
+            transition: all 0.35s ease;
+            opacity: 0.8;
+            background-color: #fff;
+            z-index: 999;
+        }
+    }*/ }
     header .form-login .btn, header .form-login .btn-large {
       margin: 0 10px; }
       header .form-login .btn-flat {
         margin: 0 10px; }
     header .form-login .row {
       margin: 0; }
-    header .form-login:hover:after {
-      content: 'EM BREVE';
-      position: absolute;
-      width: 100%;
-      height: 88%;
-      padding-top: 41px;
-      left: 0;
-      top: 0;
-      color: #9e9e9e;
-      font-size: 26px;
-      text-align: center;
-      transition: all 0.35s ease;
-      opacity: 0.8;
-      background-color: #fff;
-      z-index: 999; }
   header .picture-user {
     width: 50px;
     height: 50px;
@@ -8480,7 +8482,7 @@ footer {
       width: 22px;
       height: 22px;
       background-repeat: no-repeat; }
-      .box-right ul li .type-notification.alerta {
+      .box-right ul li .type-notification.perigo {
         background-image: url(../img/alert/perigo.jpg); }
       .box-right ul li .type-notification.agua {
         background-image: url(../img/alert/agua.jpg); }
