@@ -1,0 +1,3 @@
+<script>
+    isLogged();
+</script>

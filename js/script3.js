@@ -1,4 +1,4 @@
-URL_BASE = "http://localhost/robin";
+URL_BASE = "./";
 
 
 function timeDifference(previous) {
@@ -58,72 +58,47 @@ $(document).ready(function(){
         return false;
     });
 
-    $("#form-signup-update").submit(function () {
-        var formData = new FormData(this);
+    $("#form-update").submit(function(abc) {
+        abc.preventDefault();
+        var userId = firebase.auth().currentUser.uid;
+        var nome = $(this).find('#firstnameUpdate').val();
+        var sobrenome = $(this).find('#lastnameUpdate').val();
+        var email = $(this).find('#emailUpdate').val();
+        var senha = $(this).find('#passwordUpdate').val();
+        var cep = $(this).find('#cepUpdate').val();
+        var numero = $(this).find('#numberUpdate').val();
 
-        $.ajax({
-            url: 'signup_update.php',
-            type: 'POST',
-            data: formData,
-            success: function (data) {
-                $('.sucess-form').css("visibility", "visible");
-                setTimeout(function(){ $('.sucess-form').css("visibility", "hidden"); }, 3000);
-                $('input').val("");
-            },
-            cache: false,
-            contentType: false,
-            processData: false,
-            xhr: function() {
-                var myXhr = $.ajaxSettings.xhr();
-                if (myXhr.upload) {
-                    myXhr.upload.addEventListener('progress', function () {
-                    }, false);
-                }
-                return myXhr;
-            }
-        });
+        var data = {
+            nome: nome,
+            sobrenome: sobrenome,
+            email: email,
+            senha: senha
+        }
+
+        var dataEndereco = {
+            cep: cep,
+            numero: numero
+        }
+
+        var dataConfiguracoes = {
+            raio: 5,
+            notificacoes: true
+        }
+
+        updateData(userId, data, dataEndereco, dataConfiguracoes)
+
         return false;
     });
 
-    // $("#form-signup").submit(function () {
-    //     var formData = new FormData(this);
 
-    //     $.ajax({
-    //         url: 'signup_insert.php',
-    //         type: 'POST',
-    //         data: formData,
-    //         success: function (data) {
-    //             $('.sucess-form').css("visibility", "visible");
-    //             setTimeout(function(){ $('.sucess-form').css("visibility", "hidden"); }, 3000);
-    //             $('input').val("");
-    //         },
-    //         cache: false,
-    //         contentType: false,
-    //         processData: false,
-    //         xhr: function() {
-    //             var myXhr = $.ajaxSettings.xhr();
-    //             if (myXhr.upload) {
-    //                 myXhr.upload.addEventListener('progress', function () {
-    //                 }, false);
-    //             }
-    //             return myXhr;
-    //         }
-    //     });
-    //     return false;
-    // });
+    function updateData(userId, data, dataEndereco, dataConfiguracoes) {
+        var updates = {};
+        updates['/usuarios/' + userId] = data;
+        updates['/usuarios/' + userId + '/endereco'] = dataEndereco;
+        updates['/usuarios/' + userId + '/configuracaoes'] = dataConfiguracoes;
 
-    // $('#form-pin').submit(function(e){
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "pin_insert.php",
-    //         data: $(this).serializeArray(),
-    //     });
-    //     $('.sucess-form').css("visibility", "visible");
-    //     setTimeout(function(){ $('.sucess-form').css("visibility", "hidden"); }, 3000);
-    //     $('#emailNew').val("");
-    //     $('#nameNew').val("");
-    //     return false;
-    // });
+        return firebase.database().ref().update(updates);
+    }
 
     $("#pin-alerts > span").click(function() {
         $("#pin-alerts > span").each(function() {
@@ -162,15 +137,6 @@ $(document).ready(function(){
     });
 
     $('.modal-delete').leanModal();
-
-    $('.header-filter').click(function() {
-        $(this).closest('.filter-box').toggleClass('active');
-    });
-    $('.icon-menu').click(function() {
-        $('.box-right').toggleClass('active');
-        $('.btn-floating').toggleClass('active');
-        $(this).toggleClass('active');
-    });
 });
 
 
@@ -186,7 +152,7 @@ $('#form-login').submit(function() {
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
 
         if (user) {
-             window.location=URL_BASE+"/home.php"
+             window.location=URL_BASE+"home.php"
         }
 
 
@@ -202,7 +168,7 @@ $('#form-login').submit(function() {
 
 $('#logoutUser').click(function() {
     firebase.auth().signOut().then(function() {
-      window.location=URL_BASE+"/index.php"
+      window.location=URL_BASE+"index.php"
     }, function(error) {
       alert(error.message)
     });
@@ -221,7 +187,8 @@ $('#form-signup').submit(function() {
     var data = {
         nome: nome,
         sobrenome: sobrenome,
-        email: email
+        email: email,
+        senha: senha
     }
 
     var dataEndereco = {
@@ -247,7 +214,7 @@ $('#form-signup').submit(function() {
         database.ref('usuarios/'+user.uid+'/endereco').set(dataEndereco);
         database.ref('usuarios/'+user.uid+'/configuracoees').set(dataConfiguracoes);
 
-        window.location=URL_BASE+"/home.php";
+        window.location=URL_BASE+"home.php";
 
 
     }, function(error) {
@@ -261,7 +228,28 @@ $('#form-signup').submit(function() {
 });
 
 
+$('#deleteUser').click(function() {
+    firebase.auth().onAuthStateChanged(function(user) {
+        user.delete().then(function() {
+            window.location=URL_BASE+"index.php"
+        }, function(error) {
+          // An error happened.
+        });
+    })
+});
 
+
+
+function isLogged()
+{
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+        // User is signed in.
+        } else {
+            window.location=URL_BASE+"index.php"
+        }
+    });
+}
 
 
 
