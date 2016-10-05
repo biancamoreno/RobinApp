@@ -27,10 +27,23 @@ header {
         background-repeat: no-repeat;
         float: left;
     }
+    .form-login {
+        width: 450px;
+        min-width: 320px;
+    }
 
     .header-search{
         width: 100%;
         max-width: 500px;
+        .icon-search {
+            font-size: 16px;
+            text-align: center;
+            padding: 16px 0px;
+            color: #9e9e9e;
+            &:focus {
+                color: $orangeDefault;
+            }
+        }
     }
 
     .form-login {
@@ -46,22 +59,22 @@ header {
             margin: 0;
         }
         /*&:hover {
-            &:after {
-                content: 'EM BREVE';
-                position: absolute;
-                @include size(100%, 88%);
-                padding-top: 41px;
-                left: 0;
-                top: 0;
-                color: #9e9e9e;
-                font-size: 26px;
-                text-align: center;
-                transition: all 0.35s ease;
-                opacity: 0.8;
-                background-color: #fff;
-                z-index: 999;
-            }
-        }*/
+        &:after {
+        content: 'EM BREVE';
+        position: absolute;
+        @include size(100%, 88%);
+        padding-top: 41px;
+        left: 0;
+        top: 0;
+        color: #9e9e9e;
+        font-size: 26px;
+        text-align: center;
+        transition: all 0.35s ease;
+        opacity: 0.8;
+        background-color: #fff;
+        z-index: 999;
+    }
+    }*/
     }
     .picture-user {
         @include size(50px);
@@ -121,6 +134,10 @@ header {
     &.header-default {
         @include size(100%, 60px);
         background-color: $orangePower;
+        .r-logo {
+            background-image: url(../img/LogoRobinW.png);
+            @include size(120px, 40px);
+        }
     }
 }
 .drag-map {
@@ -205,14 +222,22 @@ header {
             .gm-style-iw {
                 top: 0!important;
                 left: 16px!important;
-                p {
-                    text-align: left;
-                    font-size: 10px;
-                    &:first-child {
-                        margin-bottom: 5px;
-                    }
-                    span {
-                        float: right;
+                min-height: 47px;
+                & > div {
+                    min-width: 200px;
+                    p {
+                        text-align: left;
+                        font-size: 10px;
+                        &:first-child {
+                            margin-bottom: 5px;
+                        }
+                        p, b {
+                            font-size: 12px;
+                        }
+                        span {
+                            font-size: 11px;
+                            float: right;
+                        }
                     }
                 }
             }
@@ -319,6 +344,7 @@ header {
     @include displayFlex;
     @include flexDirection;
     @include alignItems(center);
+    min-height: calc(100vh - 160px);
     background-color: #f1f1f1;
     padding: 5%;
     position: relative;
@@ -360,9 +386,10 @@ header {
                 }
             }
             .btn {
-                margin-left: 60px;
+                margin-left: 30px;
                 background-color: $orangeDefault;
                 max-width: 130px;
+                width: 130px;
                 float: left;
             }
         }
@@ -413,8 +440,12 @@ footer {
 
 .btn-floating {
     position: fixed;
-    right: 450px;
+    right: 40px;
     bottom: 30px;
+    transition: all 0.35s ease;
+    &.active {
+        right: 360px;
+    }
 }
 
 .modal-add {
@@ -435,20 +466,20 @@ footer {
             margin: 0;
             margin-bottom: 20px;
         }
-        & > div {
-            margin-bottom: 10px;
-            & > span {
-                color: #5a5a5a;
-            }
-            .icon {
-                opacity: 0.3;
-                cursor: pointer;
-                &:hover, &.active {
-                    opacity: 1;
+        #form-pin {
+            & > div {
+                margin-bottom: 10px;
+                & > span {
+                    color: #5a5a5a;
+                }
+                .icon {
+                    opacity: 0.3;
+                    cursor: pointer;
+                    &:hover, &.active {
+                        opacity: 1;
+                    }
                 }
             }
-        }
-        #form-pin {
             .row {
                 margin-bottom: 10px;
                 input, textarea {
@@ -472,7 +503,7 @@ footer {
 }
 #modalDelete {
     display: none;
-    position: absolute;
+    position: fixed;
     background-color: #fff;
     @include size(480px,180px);
     top: 50%!important;
@@ -492,17 +523,29 @@ footer {
         }
     }
 }
+.modal-delete {
+    color: $orangeDefault;
+    padding: 14px;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-left: 10px;
+}
 .filter-box {
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: -197px;
     @include size(200px, 225px);
     background-color: #fff;
+    transition: all .35s ease;
+    &.active {
+        bottom: 0;
+    }
     .header-filter {
         @include displayFlex;
         @include justifyContent(space-between);
         background-color: #f1f1f1;
         padding: 5px 20px;
+        cursor: pointer;
         span {
             text-transform: uppercase;
             color: #9e9e9e;
@@ -528,15 +571,34 @@ footer {
     }
 }
 
+.icon-menu {
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    font-size: 16px;
+    text-shadow: 0px 0px 20px #fff;
+    color: #9e9e9e;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    &.active {
+        right: 328px;
+    }
+}
+
 .box-right {
     position: absolute;
-    right: 0;
+    right: -318px;
     top: 60px;
     @include size(318px, 100%);
     background-color: #fff;
     box-shadow: 0 5px 11px 3px #cecece;
+    transition: all 0.35s ease;
+    &.active {
+        right: 0;
+    }
     .tabs {
         @include displayFlex;
+        @include size(100%, 40px);
         .tab {
             @include size(60px, 40px);
             box-sizing: border-box;
@@ -592,19 +654,44 @@ footer {
             @include displayFlex;
             @include alignItems;
             padding: 15px;
-            .photo-user {
+            .photo-user1, .photo-user2, .photo-user3, .photo-user4, .photo-user5, .photo-user6 {
                 @include size(50px);
-                background-image: url("http://lorempixel.com/50/50/people");
                 margin-right: 15px;
                 background-repeat: no-repeat;
                 background-size: cover;
             }
-            .photo-product {
+            .photo-user1 {
+                background-image: url("../img/photos/will.jpg");
+            }
+            .photo-user2 {
+                background-image: url("../img/photos/angelina.jpg");
+            }
+            .photo-user3 {
+                background-image: url("../img/photos/justin.jpg");
+            }
+            .photo-user4 {
+                background-image: url("../img/photos/katy.jpg");
+            }
+            .photo-user5 {
+                background-image: url("../img/photos/beyonce.jpg");
+            }
+            .photo-user6 {
+                background-image: url("../img/photos/felipao.jpg");
+            }
+            .photo-product1, .photo-product2, .photo-product3 {
                 @include size(50px);
-                background-image: url("http://lorempixel.com/50/50/people");
                 margin-right: 15px;
                 background-repeat: no-repeat;
                 background-size: cover;
+            }
+            .photo-product1 {
+                background-image: url("../img/photos/tenis.jpg");
+            }
+            .photo-product2 {
+                background-image: url("../img/photos/jeans.jpg");
+            }
+            .photo-product3 {
+                background-image: url("../img/photos/batedeira.jpg");
             }
             .km-local {
                 font-size: 12px;
@@ -647,6 +734,10 @@ footer {
 
                 }
             }
+            .icon-checkmark, .icon-forward {
+                color: #9e9e9e;
+                font-size: 12px;
+            }
             .type-notification {
                 @include size(22px);
                 background-repeat: no-repeat;
@@ -672,6 +763,34 @@ footer {
                     background-image: url(../img/alert/energia.jpg);
                 }
             }
+            &.gold, &.silver, &.bronze {
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include size(100%, 3px);
+                }
+            }
+            &.gold {
+                background-color: rgba(242,245,46,0.15);
+                &:before {
+                    background-color: #F2F52E;
+                }
+            }
+            &.silver {
+                background-color: rgba(157,144,141,0.15);
+                &:before {
+                    background-color: #9D908D;
+                }
+            }
+            &.bronze {
+                background-color: rgba(222,122,99,0.15);
+                &:before {
+                    background-color: #DE7A63;
+                }
+            }
         }
     }
 }
@@ -679,27 +798,47 @@ footer {
 @media only screen and (max-width: 600px) {
     header {
         display: block;
-        height: 200px;
-        .form-login {
-            &:hover {
-                &:after {
-                    content: initial;
+        height: 300px;
+        &.header-default {
+            .header-search {
+                padding: 0 10px;
+                display: inline;
+                input {
+                    width: 40%;
                 }
             }
-            &:after {
-                content: 'EM BREVE ';
+            .picture-user {
+                top: 10px;
+                right: 10px;
                 position: absolute;
-                @include size(100%, 69%);
-                padding-top: 52px;
-                left: 0;
-                top: 47px;
-                background: #fff;
-                opacity: 0.8;
-                z-index: 998;
-                color: #9e9e9e;
-                font-size: 20px;
-                text-align: center;
             }
+        }
+        .form-login {
+            width: 320px;
+            .row {
+                @include displayFlex;
+                @include flexDirection;
+                .input-field {
+                    width: 100%;
+                    &:last-child {
+                        padding: 0;
+                    }
+                }
+            }
+            //            &:after {
+            //                content: 'EM BREVE ';
+            //                position: absolute;
+            //                @include size(100%, 69%);
+            //                padding-top: 52px;
+            //                left: 0;
+            //                top: 47px;
+            //                background: #fff;
+            //                opacity: 0.8;
+            //                z-index: 998;
+            //                color: #9e9e9e;
+            //                font-size: 20px;
+            //                text-align: center;
+            //            }
         }
     }
     .signup {
@@ -714,6 +853,34 @@ footer {
             }
         }
     }
+    .rb-description {
+        margin: 5%;
+        .infos {
+            p {
+                &:first-child {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .rb-video {
+        padding: 5% 0;
+        div {
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+    .signup {
+        p {
+            font-size: 18px;
+        }
+    }
+    #form-signup, #form-signup-update {
+        .input-field {
+            width: 100%;
+        }
+    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -724,5 +891,11 @@ footer {
                 @include size(95%, auto);
             }
         }
+    }
+    #form-signup {
+        width: 80%!important;
+    }
+    .signup {
+        padding: 15% 5%;
     }
 }

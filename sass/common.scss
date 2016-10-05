@@ -62,8 +62,22 @@ $orangePower: #ff9b23;
     border-bottom: 1px solid $orangeDefault!important;
     box-shadow: 0 1px 0 0 $orangeDefault!important;
 }
+.input-field {
+    label {
+        left: 0;
+    }
+}
+select {
+    display: block;
+    background-color: transparent!important;
+}
 .btn {
     background-color: $orangeDefault!important;
+    &:focus {
+        background-color: $orangeDefault!important;
+    }
+}
+.btn-flat {
     &:focus {
         background-color: $orangeDefault!important;
     }
@@ -80,7 +94,7 @@ $orangePower: #ff9b23;
     }
 }
 .icon {
-    @include size(15px);
+    @include size(18px);
     margin-right: 8px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -125,6 +139,10 @@ $orangePower: #ff9b23;
         outline: none;
         padding: 10px;
         box-sizing: border-box;
+        &:focus {
+            border: none;
+            box-shadow: none;
+        }
     }
     label {
         font-size: 15px;

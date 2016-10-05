@@ -1,18 +1,18 @@
     <?php include("includes/header.php") ?>
             <header>
-                <div class="r-logo"></div>
+                <a class="r-logo" href="index.php"></a>
                 <div class="row form-login">
                     <form class="col s12" id="form-login">
                         <div class="row">
-                            <div class="input-field col s3">
+                            <div class="input-field col s6">
                                 <input name="email" type="text" class="validate">
                                 <label class="active" for="email">Email</label>
                             </div>
-                            <div class="input-field col s3">
+                            <div class="input-field col s6">
                                 <input name="password" type="password" class="validate">
                                 <label class="active" for="password">Senha</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12">
                                 <button class="btn waves-effect waves-light" type="submit" name="action">ENTRAR</button>
                                 <a href="cadastro.php" class="waves-effect waves-teal btn-flat">Cadastrar</a>
                             </div>

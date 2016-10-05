@@ -16,10 +16,20 @@ body.home-page {
   border-bottom: 1px solid #f7ca18 !important;
   box-shadow: 0 1px 0 0 #f7ca18 !important; }
 
+.input-field label {
+  left: 0; }
+
+select {
+  display: block;
+  background-color: transparent !important; }
+
 .btn {
   background-color: #f7ca18 !important; }
   .btn:focus {
     background-color: #f7ca18 !important; }
+
+.btn-flat:focus {
+  background-color: #f7ca18 !important; }
 
 .btn-default {
   background: transparent;
@@ -32,8 +42,8 @@ body.home-page {
     background-color: transparent !important; }
 
 .icon {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   margin-right: 8px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -67,6 +77,9 @@ body.home-page {
     outline: none;
     padding: 10px;
     box-sizing: border-box; }
+    .browser-default input:focus, .browser-default textarea:focus {
+      border: none;
+      box-shadow: none; }
   .browser-default label {
     font-size: 15px;
     color: #5a5a5a; }

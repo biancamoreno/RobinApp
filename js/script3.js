@@ -162,6 +162,15 @@ $(document).ready(function(){
     });
 
     $('.modal-delete').leanModal();
+
+    $('.header-filter').click(function() {
+        $(this).closest('.filter-box').toggleClass('active');
+    });
+    $('.icon-menu').click(function() {
+        $('.box-right').toggleClass('active');
+        $('.btn-floating').toggleClass('active');
+        $(this).toggleClass('active');
+    });
 });
 
 

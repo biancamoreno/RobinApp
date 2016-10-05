@@ -42,8 +42,20 @@ $kms = array(1, 2, 3, 4 , 5);
             <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         </head>
         <body>
+            <div id="modalDelete">
+                <div class="modal-content center">
+                    <p>Tem certeza que deseja excluir sua conta? <span class="icon-heart-broken"></span></p>
+                    <button class="btn waves-effect waves-light" name="action6">CANCELAR</button>
+                    <button class="btn-default" name="action7">EXCLUIR</button>
+                </div>
+            </div>
             <header class="header-default">
-                <div class="r-logo"></div>
+                <a class="r-logo" href="home.php"></a>
+                <div class="picture-user circle right dropdown-button" data-beloworigin="true" data-activates='dropdown1'></div>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="home.php.php">Home</a></li>
+                    <li><a href="index.php" id="logoutUser">Sair</a></li>
+                </ul>
             </header>
             <section class="signup">
                 <div class="sucess-form">
@@ -88,12 +100,12 @@ $kms = array(1, 2, 3, 4 , 5);
                         </div>
                         <div class="input-field col s2">
                             <select name="stateUpdate" id="stateUpdate" class="validate">
-                            <?php
+                                <?php
                                 foreach ($states as $state) {
                                     if($state == $estado) { $attr = 'selected="selected"'; } else { $attr = ''; }
                                     echo '<option value="'.$state.'" '.$attr.'>'.$state.'</option>';
                                 }
-                            ?>
+                                ?>
                             </select>
                             <label class="active" for="stateUpdate">Estado</label>
                         </div>
@@ -126,10 +138,10 @@ $kms = array(1, 2, 3, 4 , 5);
                         <div class="input-field col s12">
                             <select name="radiusUpdate" id="radiusUpdate" class="validate">
                                 <?php
-                                    foreach ($kms as $km) {
-                                        if($km == $raio) { $attr = 'selected="selected"'; } else { $attr = ''; }
-                                        echo '<option value="'.$km.'" '.$attr.'>'.$km.' km</option>';
-                                    }
+                                foreach ($kms as $km) {
+                                    if($km == $raio) { $attr = 'selected="selected"'; } else { $attr = ''; }
+                                    echo '<option value="'.$km.'" '.$attr.'>'.$km.' km</option>';
+                                }
                                 ?>
                             </select>
                             <label class="active" for="radiusUpdate">Qual raio você gostaria de receber notificações?</label>
@@ -151,6 +163,7 @@ $kms = array(1, 2, 3, 4 , 5);
                             <label class="active" for="passwordConfirmUpdate">Confirme sua Senha</label>
                         </div>
                     </div>
+                    <a class="modal-delete left" href="#modalDelete">Excluir conta</a>
                     <button class="btn-large waves-effect waves-light right" type="submit" name="action">Atualizar</button>
                 </form>
             </section>
@@ -162,4 +175,4 @@ $kms = array(1, 2, 3, 4 , 5);
             <script src="js/script3.js"></script>
         </body>
     </html>
-</DOCTYPE!>
+    </DOCTYPE!>
