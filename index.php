@@ -1,50 +1,118 @@
     <?php include("includes/header.php") ?>
-            <header>
-                <a class="r-logo" href="index.php"></a>
-                <div class="row form-login">
+
+
+            
+            <header id="home-header">
+                <div class="container">
+
+                    <nav>
+                      <div class="nav-wrapper">
+                        <a class="r-logo" href="index.php"></a>
+                        <ul class="right">
+                         <li>
+                              <a class="waves-effect waves-light btn btn-signup" href="#modal-signup">
+                                <i class="icon-user"></i>  Cadastro
+                              </a>
+                          </li>
+                          <li>
+                              <a class="waves-effect waves-light btn" id="btn-login" href="#modal-login">
+                                <i class="icon-display"></i>  Login
+                              </a>
+                          </li>
+                          <li>
+                              <a class="waves-effect waves-light btn">
+                                <i class="icon-play3"></i>  Google Play
+                              </a>
+                          </li>
+                          <li>
+                              <a class="waves-effect waves-light btn">
+                                <i class="icon-appleinc"></i> App Store
+                              </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </nav>
+                </div>
+            </header>
+
+
+            <div id="modal-login" class="modal">
+                <div class="modal-content">
                     <form class="col s12" id="form-login">
+                      <div class="row">
+                          <div class="col s12">
+                              <h4>Login</h4>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input id="email" type="email" class="validate">
+                          <label for="email" data-error="wrong">Email</label>
+                        </div>
+                        <div class="input-field col s12">
+                          <input id="password" type="password" class="validate">
+                          <label for="password" data-error="wrong">Senha</label>
+                        </div>
+                        <div class="input-field col 12">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">ENTRAR</button>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="row">
+                        <div class="col s12">
+                            <a href="esqueci.php">Esqueci minha senha</a>
+                            <br><br>
+                            <a href="#modal-signup" class="btn-signup">Ainda não tem cadastro? Clique aqui</a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <div id="modal-signup" class="modal">
+                <div class="modal-content">
+                    <h4>Faça o cadastro e acompanhe 
+                    <br>seu bairro em tempo real!</h4>
+                    <form id="form-signup" method="post" action="">
                         <div class="row">
                             <div class="input-field col s6">
-                                <input name="email" type="text" class="validate">
-                                <label class="active" for="email">Email</label>
+                                <input name="firstnameSignup" id="firstnameSignup" type="text" class="validate">
+                                <label class="active" for="firstnameSignup">Nome</label>
                             </div>
                             <div class="input-field col s6">
-                                <input name="password" type="password" class="validate">
-                                <label class="active" for="password">Senha</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">ENTRAR</button>
-                                <a href="cadastro.php" class="waves-effect waves-teal btn-flat">Cadastrar</a>
+                                <input name="lastnameSignup" id="lastnameSignup" type="text" class="validate">
+                                <label class="active" for="lastnameSignup">Sobrenome</label>
                             </div>
                         </div>
-                        
-                        
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input name="emailSignup" id="emailSignup" type="email" class="validate">
+                                <label class="active" for="SignupNew">Email</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="passwordSignup" id="passwordSignup" type="password" class="validate">
+                                <label class="active" for="passwordSignup">Senha</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input name="cepSignup" id="cepSignup" type="text" class="validate">
+                                <label class="active" for="cepSignup">CEP</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input name="numberSignup" id="numberSignup" type="text" class="validate">
+                                <label class="active" for="numberSignup">Número</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn-large waves-effect waves-light right" type="submit" name="action">CADASTRAR</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
-                <!--
-                <div class="box-available">
-                <i class="icon-display"></i>
-                <div>
-                <span>Acesso via</span>
-                <span>Browser</span>
-                </div>
-                </div>
-                <div class="box-available">
-                <i class="icon-play3"></i>
-                <div>
-                <span>Download Disponível</span>
-                <span>Google Play</span>
-                </div>
-                </div>
-                <div class="box-available">
-                <i class="icon-appleinc"></i>
-                <div>
-                <span>Download Disponível</span>
-                <span>App Store</span>
-                </div>
-                </div>
-                -->
-            </header>
+              </div>
+
+
             <section class="drag-map">
                 <div class="hide-on-med-and-down">
                     <i class="icon-clock"></i>

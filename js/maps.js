@@ -18,33 +18,38 @@ function  initMap(){
     });
   });
 
-  var input = document.getElementById('map-search');
-  var searchBox = new google.maps.places.SearchBox(input);
-  // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  if ($('#map-search').length) {
 
-  map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
-  });
+      var input = document.getElementById('map-search');
+      var searchBox = new google.maps.places.SearchBox(input);
+      // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-  searchBox.addListener('places_changed', function() {
-    var places = searchBox.getPlaces();
+      map.addListener('bounds_changed', function() {
+        searchBox.setBounds(map.getBounds());
+      });
 
-    if (places.length == 0) {
-      return;
-    }
-    // For each place, get the icon, name and location.
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
+      searchBox.addListener('places_changed', function() {
+        var places = searchBox.getPlaces();
 
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-    map.fitBounds(bounds);
-  });
+        if (places.length == 0) {
+          return;
+        }
+        // For each place, get the icon, name and location.
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function(place) {
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+        });
+        map.fitBounds(bounds);
+      });
+  }
+
+
 
   var geoQuery = geoFire.query({
     center: [-23.574761, -46.622472],
@@ -53,8 +58,16 @@ function  initMap(){
 
   var onKeyEnteredRegistration = geoQuery.on("key_entered", function(key, location, distance) {
     return firebase.database().ref('/pins/' + key).once('value').then(function(snapshot) {
-      var pinData = snapshot.val()
-      addPinToMap(key, pinData, map);
+      
+      var pinData = snapshot.val();
+      var now = new Date();
+      var lastHour = new Date(now.getTime() - (1000*60*60*12));
+
+      if (pinData["data"] >= lastHour) {
+        addPinToMap(key, pinData, map);
+      }else{
+        geoFire.remove(key);
+      }
     });
   });
 
@@ -66,9 +79,11 @@ function  initMap(){
 var markersArray = [];
 
 function removePin(key){
-  markersArray[key].setMap(null);
-  markersArray.splice( key, 1 );
-  $('#tab-feed li[data-id="'+key+'"]').remove();
+  if (markersArray[key]!==undefined) {
+    markersArray[key].setMap(null);
+    markersArray.splice( key, 1 );
+    $('#tab-feed li[data-id="'+key+'"]').remove();
+  }
 }
 
 function addPinToMap(key, pin, map){

@@ -1,4 +1,8 @@
-URL_BASE = "./";
+if (window.location.hostname=="localhost") {
+    URL_BASE = "http://localhost/robin/";
+}else{
+    URL_BASE = "http://robinapp.com.br/";
+}
 
 
 function timeDifference(previous) {
@@ -139,6 +143,9 @@ $(document).ready(function(){
     $('.modal-delete').leanModal();
 });
 
+$('#btn-login').leanModal();
+$('.btn-signup').leanModal();
+
 
 var database = firebase.database();
 var firebaseRef = database.ref("locations");
@@ -146,8 +153,8 @@ var geoFire = new GeoFire(firebaseRef);
 
 
 $('#form-login').submit(function() {
-    var email = $(this).find('input[name="email"]').val();
-    var password = $(this).find('input[name="password"]').val();
+    var email = $(this).find('#email').val();
+    var password = $(this).find('#password').val();
 
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
 

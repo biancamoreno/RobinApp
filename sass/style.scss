@@ -15,21 +15,44 @@
 }
 
 header {
-    @include size(100%, 150px);
+    @include size(100%, 80px);
     padding: 16px;
     @include displayFlex;
     @include justifyContent(space-between);
     @include alignItems;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: #FFF;
+    
     .r-logo {
         @include size(160px, 50px);
         background-image: url(../img/LogoRobin.png);
         background-size: contain;
         background-repeat: no-repeat;
         float: left;
+        margin-top: 6px;
     }
-    .form-login {
-        width: 450px;
-        min-width: 320px;
+
+    nav{
+        background-color: transparent;
+        box-shadow: none;
+
+        .nav-wrapper{
+            ul{
+                li{
+                    i{
+                        height: auto;
+                        display: inline-block;
+                        vertical-align: text-top;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+
+        
     }
 
     .header-search{
@@ -47,6 +70,9 @@ header {
     }
 
     .form-login {
+        float: right;
+        width: 100%;
+        max-width: 700px; 
         margin: 0;
         position: relative;
         .btn {
@@ -140,8 +166,26 @@ header {
         }
     }
 }
+
+#modal-login{
+    width: 500px;
+
+    h4{
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+}
+
+#modal-signup{
+    width: 700px;
+}
+
+
 .drag-map {
+    margin-top: 80px;
     position: relative;
+
     div {
         &:first-child, &:nth-child(2) {
             color: #fff;
@@ -150,7 +194,7 @@ header {
             text-transform: uppercase;
             @include size(264px, 100%);
             position: absolute;
-            left: 7%;
+            left: 20%;
             z-index: 2;
             @include displayFlex;
             @include flexDirection;
@@ -167,7 +211,7 @@ header {
         &:nth-child(2) {
             font-size: 24px;
             text-transform: none;
-            right: 7%;
+            right: 20%;
             left: auto;
             i {
                 margin-bottom: 10px;
@@ -182,8 +226,9 @@ header {
         &:before, &:after {
             content: '';
             position: absolute;
-            @include size(300px, 50px);
-            left: calc(50% - 150px);
+            width: 20%;
+            height: 20%;
+            left: 40%;
             top: 0;
             opacity: 0.7;
             background-color: #bbd9ea;
@@ -199,7 +244,7 @@ header {
         &:before, &:after {
             content: '';
             position: absolute;
-            @include size(calc(50% - 150px), 100%);
+            @include size(40%, 100%);
             left: 0;
             top: 0;
             opacity: 0.7;
@@ -213,7 +258,7 @@ header {
 
     }
     #googleMap {
-        @include size(100%, 600px);
+        @include size(100%, calc(100% - 80px));
         div {
             &:first-child {
                 z-index: 0;
@@ -273,6 +318,7 @@ header {
     .exemple-cel {
         @include size(60%, 486px);
         background-image: url(../img/display/cel_hor.jpg);
+        background-position: right center;
         background-size: contain;
         background-repeat: no-repeat;
     }
@@ -344,7 +390,6 @@ header {
     @include displayFlex;
     @include flexDirection;
     @include alignItems(center);
-    min-height: calc(100vh - 160px);
     background-color: #f1f1f1;
     padding: 5%;
     position: relative;
@@ -795,6 +840,70 @@ footer {
     }
 }
 
+@media only screen and (max-width: 1500px) {
+    header{
+        .container{
+            width: 100%;
+        }
+    }
+
+    .drag-map div:first-child{
+        left: 5%;
+    }
+
+    .drag-map div:nth-child(2){
+        right: 5%;
+    }
+
+    .drag-map .glass-v:before, .drag-map .glass-v:after{
+        @include size(calc(50% - 150px), 100%);
+    }
+
+    .drag-map .glass-h:before, .drag-map .glass-h:after{
+        @include size(300px, calc(50% - 250px));
+        left: calc(50% - 150px);
+        
+    }
+
+    .drag-map .glass-v:after{
+
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    header{
+        position: relative;
+        height: auto;
+
+        .r-logo{
+            float: none;
+            margin: 0 auto;
+            display: block;
+        }
+
+        nav{
+            ul{
+                margin-top: 20px;
+                width: 100%;
+                text-align: center;
+
+                li{
+                    float: none;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .drag-map{
+        margin-top: 0;
+
+        #googleMap{
+            height: 700px;
+        }
+    }
+}
+
 @media only screen and (max-width: 600px) {
     header {
         display: block;
@@ -899,3 +1008,24 @@ footer {
         padding: 15% 5%;
     }
 }
+
+@media only screen and (max-width: 540px) {
+    header{
+        nav{
+            ul{
+                li{
+                    width: 100%;
+                    margin: 0 0 15px;
+
+                    a.btn{
+                        width: 100%;
+                        box-sizing: border-box;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
