@@ -73,24 +73,3 @@
                 <p>Robin App. Todos os direitos reservados ® 2016</p>
             </footer>
     <?php include("includes/footer.php") ?>
-
-    <script>
-    firebase.auth().onAuthStateChanged(function(user) {
-        var userId = firebase.auth().currentUser.uid;
-        return firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
-            data = snapshot.val();
-        
-            $('#firstnameUpdate').val(data.nome);
-            $('#lastnameUpdate').val(data.sobrenome);
-            $('#emailUpdate').val(data.email);
-            $('#passwordUpdate').val(data.senha);
-            $('#cepUpdate').val(data.endereco.cep);
-            $('#numberUpdate').val(data.endereco.numero);
-            $('#fotoUpdate').val(data.foto);
-
-            $(function() {
-                Materialize.updateTextFields();
-            });   
-        });
-    });
-    </script>

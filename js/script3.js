@@ -75,11 +75,12 @@ $(document).ready(function(){
                 var numero = $("#form-update").find('#numberUpdate').val();
 
                 // ALTERAR A FOTO
-                //$(this).find('#fotoUpdate').attr('src', 'file');
+                $('#form-update').find('#fotoUpdate').attr('src', file);
 
                 var data = {
                     nome: nome,
                     sobrenome: sobrenome,
+                    email: email,
                     foto: file
                 }
 
@@ -151,6 +152,25 @@ $(document).ready(function(){
     });
 
     $('.modal-delete').leanModal();
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        var userId = firebase.auth().currentUser.uid;
+        return firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
+            data = snapshot.val();
+        
+            $('#firstnameUpdate').val(data.nome);
+            $('#lastnameUpdate').val(data.sobrenome);
+            $('#emailUpdate').val(data.email);
+            $('#passwordUpdate').val(data.senha);
+            $('#cepUpdate').val(data.endereco.cep);
+            $('#numberUpdate').val(data.endereco.numero);
+            $('#fotoUpdate').attr('src', data.foto);
+
+            $(function() {
+                Materialize.updateTextFields();
+            });   
+        });
+    });
 });
 
 $('#btn-login').leanModal();
