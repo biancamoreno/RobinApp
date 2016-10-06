@@ -2,7 +2,11 @@
 <body>
     <div id="modalDelete">
         <div class="modal-content center">
-            <p>Tem certeza que deseja excluir sua conta? <span class="icon-heart-broken"></span></p>
+            <p>Para excluir sua conta, digite sua senha abaixo: <span class="icon-heart-broken"></span></p>
+            <div class="input-field col s6">
+                <input name="passwordDelete" id="passwordDelete" type="password" class="validate">
+                <label class="active" for="passwordUpdate">Senha</label>
+            </div>
             <button class="btn waves-effect waves-light modal-close" name="action6">CANCELAR</button>
             <button class="btn-default" id="deleteUser" name="action7">EXCLUIR</button>
         </div>
