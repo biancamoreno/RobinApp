@@ -22,6 +22,20 @@
         <p>Alterar Cadastro</p>
         <form id="form-update" method="post" action="">
             <div class="row">
+                <div class="file-field input-field col s10">
+                    <div class="btn">
+                        <span>FOTO</span>
+                        <input type="file" name="imgUpdate" id="imgUpdate">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <div class="file-field input-field col s2">
+                    <img src="img/LogoRobinDefault.png" name="fotoUpdate" id="fotoUpdate" width="50px" height="50px" />
+                </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s6">
                     <input name="firstnameUpdate" id="firstnameUpdate" type="text" class="validate">
                     <label class="active" for="firstnameUpdate">Nome</label>
@@ -61,17 +75,22 @@
     <?php include("includes/footer.php") ?>
 
     <script>
-        firebase.auth().onAuthStateChanged(function(user) {
-            var userId = firebase.auth().currentUser.uid;
-            return firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
-                data = snapshot.val();
+    firebase.auth().onAuthStateChanged(function(user) {
+        var userId = firebase.auth().currentUser.uid;
+        return firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
+            data = snapshot.val();
+        
+            $('#firstnameUpdate').val(data.nome);
+            $('#lastnameUpdate').val(data.sobrenome);
+            $('#emailUpdate').val(data.email);
+            $('#passwordUpdate').val(data.senha);
+            $('#cepUpdate').val(data.endereco.cep);
+            $('#numberUpdate').val(data.endereco.numero);
+            $('#fotoUpdate').val(data.foto);
 
-                $('#firstnameUpdate').val(data.nome);
-                $('#lastnameUpdate').val(data.sobrenome);
-                $('#emailUpdate').val(data.email);
-                $('#passwordUpdate').val(data.senha);
-                $('#cepUpdate').val(data.endereco.cep);
-                $('#numberUpdate').val(data.endereco.numero);
-            });
+            $(function() {
+                Materialize.updateTextFields();
+            });   
         });
+    });
     </script>

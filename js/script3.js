@@ -1,9 +1,4 @@
-if (window.location.hostname=="localhost") {
-    URL_BASE = "http://localhost/robin/";
-}else{
-    URL_BASE = "http://robinapp.com.br/";
-}
-
+URL_BASE = "./"
 
 function timeDifference(previous) {
 
@@ -62,47 +57,62 @@ $(document).ready(function(){
         return false;
     });
 
-    $("#form-update").submit(function(abc) {
-        abc.preventDefault();
-        var userId = firebase.auth().currentUser.uid;
-        var nome = $(this).find('#firstnameUpdate').val();
-        var sobrenome = $(this).find('#lastnameUpdate').val();
-        var email = $(this).find('#emailUpdate').val();
-        var senha = $(this).find('#passwordUpdate').val();
-        var cep = $(this).find('#cepUpdate').val();
-        var numero = $(this).find('#numberUpdate').val();
+    $("#form-update").submit(function(e) {
+        e.preventDefault();
 
-        var data = {
-            nome: nome,
-            sobrenome: sobrenome,
-            email: email,
-            senha: senha
-        }
+        var formData = new FormData(this);
+        $.ajax({
+            url: 'upload.php',
+            type: 'POST',
+            data: formData,
+            success: function (file) {
 
-        var dataEndereco = {
-            cep: cep,
-            numero: numero
-        }
+                var userId = firebase.auth().currentUser.uid;
+                var nome = $("#form-update").find('#firstnameUpdate').val();
+                var sobrenome = $("#form-update").find('#lastnameUpdate').val();
+                var email = $("#form-update").find('#emailUpdate').val();
+                var cep = $("#form-update").find('#cepUpdate').val();
+                var numero = $("#form-update").find('#numberUpdate').val();
 
-        var dataConfiguracoes = {
-            raio: 5,
-            notificacoes: true
-        }
+                // ALTERAR A FOTO
+                //$(this).find('#fotoUpdate').attr('src', 'file');
 
-        updateData(userId, data, dataEndereco, dataConfiguracoes)
+                var data = {
+                    nome: nome,
+                    sobrenome: sobrenome,
+                    foto: file
+                }
 
-        return false;
+                var dataEndereco = {
+                    cep: cep,
+                    numero: numero
+                }
+
+                var dataConfiguracoes = {
+                    raio: 5,
+                    notificacoes: true
+                }
+
+                firebase.database().ref('usuarios').child(userId).set(data);
+                firebase.database().ref('usuarios').child(userId).child('endereco').set(dataEndereco);
+                firebase.database().ref('usuarios').child(userId).child('configuracoes').set(dataConfiguracoes);
+
+            },
+            cache: false,
+            contentType: false,
+            processData: false,
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                if (myXhr.upload) {
+                    myXhr.upload.addEventListener('progress', function () {
+                    }, false);
+                }
+                return myXhr;
+            }
+        });
+
+
     });
-
-
-    function updateData(userId, data, dataEndereco, dataConfiguracoes) {
-        var updates = {};
-        updates['/usuarios/' + userId] = data;
-        updates['/usuarios/' + userId + '/endereco'] = dataEndereco;
-        updates['/usuarios/' + userId + '/configuracaoes'] = dataConfiguracoes;
-
-        return firebase.database().ref().update(updates);
-    }
 
     $("#pin-alerts > span").click(function() {
         $("#pin-alerts > span").each(function() {
@@ -157,11 +167,9 @@ $('#form-login').submit(function() {
     var password = $(this).find('#password').val();
 
     firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
-
         if (user) {
              window.location=URL_BASE+"home.php"
         }
-
 
     }, function(error) {
       var errorCode = error.code;
@@ -184,6 +192,7 @@ $('#logoutUser').click(function() {
 
 
 $('#form-signup').submit(function() {
+    var foto = $(this).find('#fotoSignup').val();
     var nome = $(this).find('#firstnameSignup').val();
     var sobrenome = $(this).find('#lastnameSignup').val();
     var email = $(this).find('#emailSignup').val();
@@ -195,7 +204,7 @@ $('#form-signup').submit(function() {
         nome: nome,
         sobrenome: sobrenome,
         email: email,
-        senha: senha
+        foto: foto
     }
 
     var dataEndereco = {
@@ -223,36 +232,36 @@ $('#form-signup').submit(function() {
 
         window.location=URL_BASE+"home.php";
 
-
     }, function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;
       alert(errorMessage);
     });
 
-
     return false;
 });
 
-
 $('#deleteUser').click(function() {
-    firebase.auth().onAuthStateChanged(function(user) {
+    const user = firebase.auth().currentUser;
+    const credential = firebase.auth.EmailAuthProvider.credential(user.email, $('#passwordDelete').val());
+
+    user.reauthenticate(credential).then(function() {
+        firebase.database().ref('usuarios/'+user.uid).remove();
         user.delete().then(function() {
             window.location=URL_BASE+"index.php"
         }, function(error) {
-          // An error happened.
+            console.log(error);
         });
-    })
+    }, function(error) {
+        alert('Nao foi possivel excluir, verifique a senha digitada.');
+    });
+
 });
-
-
 
 function isLogged()
 {
     firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-        // User is signed in.
-        } else {
+        if (!user) {
             window.location=URL_BASE+"index.php"
         }
     });

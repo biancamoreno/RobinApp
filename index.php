@@ -73,6 +73,7 @@
                     <h4>Faça o cadastro e acompanhe 
                     <br>seu bairro em tempo real!</h4>
                     <form id="form-signup" method="post" action="">
+                        <input type="hidden" name="fotoSignup" id="fotoSignup" value="img/LogoRobinDefault.png">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input name="firstnameSignup" id="firstnameSignup" type="text" class="validate">
