@@ -9,6 +9,7 @@
             <meta property="og:image" content="http://www.robinapp.com.br/img/robin.png" />
             <link rel="shortcut icon" href="img/robinfavicon.png" type="image/png"/>
             <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+            <link rel="stylesheet" type="text/css" href="css/nanoscroller.css">
             <link rel="stylesheet" type="text/css" href="css/style.css">
             <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         </head>

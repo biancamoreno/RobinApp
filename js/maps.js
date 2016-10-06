@@ -134,7 +134,7 @@ function addPinToMap(key, pin, map){
                     +'</li>';
 
   $('#tab-feed').prepend(feedHtml)
-
+$(".nano").nanoScroller();
 
 
 

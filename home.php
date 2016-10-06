@@ -66,7 +66,6 @@
             </div>
         </div>
         </div>
-    <div class="icon-menu active"></div>
     <div class="box-right active">
         <div class="tabs">
             <div class="tab-feed tab active"><span class="icon-location"></span></div>
@@ -75,144 +74,149 @@
             <div class="tab-groups tab"><span class="icon-bubbles4"></span></div>
             <div class="tab-ads tab"><span class="icon-bullhorn"></span></div>
         </div>
-        <ul class="lists-box-right feed" id="tab-feed"></ul>
-        <ul class="lists-box-right list-friends">
-            <li>
-                <div class="photo-user1 circle"></div>
-                <div class="content-msg">
-                    <p class="name-user">Will Smith</p>
-                    <p class="simple">Rua Tenente Afonso, 230.</p>
-                    <div>
-                        <button class="btn-default" name="action2">VER NO MAPA</button>
-                        <button class="btn-default" name="action3">MENSAGEM</button>
+        <div id="about" class="nano">
+            <ul class="lists-box-right feed nano-content" id="tab-feed"></ul>
+            <ul class="lists-box-right list-friends nano-content">
+                <li>
+                    <div class="photo-user1 circle"></div>
+                    <div class="content-msg">
+                        <p class="name-user">Will Smith</p>
+                        <p class="simple">Rua Tenente Afonso, 230.</p>
+                        <div>
+                            <button class="btn-default" name="action2">VER NO MAPA</button>
+                            <button class="btn-default" name="action3">MENSAGEM</button>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="photo-user2 circle"></div>
-                <div class="content-msg">
-                    <p class="name-user">Angelina Jolie</p>
-                    <p class="simple">Rua Mário Clóvis, 10.</p>
-                    <div>
-                        <button class="btn-default" name="action2">VER NO MAPA</button>
-                        <button class="btn-default" name="action3">MENSAGEM</button>
+                </li>
+                <li>
+                    <div class="photo-user2 circle"></div>
+                    <div class="content-msg">
+                        <p class="name-user">Angelina Jolie</p>
+                        <p class="simple">Rua Mário Clóvis, 10.</p>
+                        <div>
+                            <button class="btn-default" name="action2">VER NO MAPA</button>
+                            <button class="btn-default" name="action3">MENSAGEM</button>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="photo-user3 circle"></div>
-                <div class="content-msg">
-                    <p class="name-user">Justin Timberlake</p>
-                    <p class="simple">Rua Louis Vasconcelos, 1220.</p>
-                    <div>
-                        <button class="btn-default" name="action2">VER NO MAPA</button>
-                        <button class="btn-default" name="action3">MENSAGEM</button>
+                </li>
+                <li>
+                    <div class="photo-user3 circle"></div>
+                    <div class="content-msg">
+                        <p class="name-user">Justin Timberlake</p>
+                        <p class="simple">Rua Louis Vasconcelos, 1220.</p>
+                        <div>
+                            <button class="btn-default" name="action2">VER NO MAPA</button>
+                            <button class="btn-default" name="action3">MENSAGEM</button>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="photo-user4 circle"></div>
-                <div class="content-msg">
-                    <p class="name-user">Katy Perry</p>
-                    <p class="simple">Rua Carlos Afonso Nóbrega, 120.</p>
-                    <div>
-                        <button class="btn-default" name="action2">VER NO MAPA</button>
-                        <button class="btn-default" name="action3">MENSAGEM</button>
+                </li>
+                <li>
+                    <div class="photo-user4 circle"></div>
+                    <div class="content-msg">
+                        <p class="name-user">Katy Perry</p>
+                        <p class="simple">Rua Carlos Afonso Nóbrega, 120.</p>
+                        <div>
+                            <button class="btn-default" name="action2">VER NO MAPA</button>
+                            <button class="btn-default" name="action3">MENSAGEM</button>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-        <ul class="lists-box-right messages">
-            <li>
-                <div class="photo-user5 circle"></div>
-                <div class="content-msg">
-                    <p class="name-user">Beyoncé</p>
-                    <p class="simple">Podemos combinar.</p>
-                </div>
-                <div class="icon-forward"></div>
-            </li>
-            <li>
-                <div class="photo-user6 circle"></div>
-                <div class="content-msg">
-                    <p class="name-user">Felipão</p>
-                    <p class="simple">Vou falar com o Julião.</p>
-                </div>
-                <div class="icon-checkmark"></div>
-            </li>
-        </ul>
-        <ul class="lists-box-right groups row">
-            <button class="btn waves-effect waves-light left col s12" name="action4">NOVO GRUPO</button>
-            <li>
-                <div class="content-msg">
-                    <p class="featured">Caronas</p>
-                    <p class="simple">Grupo destinado a vizinhos do bairro Aclimação para disponibilização de caronas.</p>
-                </div>
-                <button class="btn-default" name="action5">DEIXAR DE PARTICIPAR</button>
-            </li>
-            <li>
-                <div class="content-msg">
-                    <p class="featured">Festa Fim de Ano 2016</p>
-                    <p class="simple">Estamos organizando uma festa para a despedida de 2016 do pessoal da Vl. Mariana. Junte-se a nós!</p>
-                </div>
-                <button class="btn-default" name="action5">DEIXAR DE PARTICIPAR</button>
-            </li>
-            <li>
-                <div class="content-msg">
-                    <p class="featured">Policiamento no Bairro Sta. Lúcia</p>
-                    <p class="simple">Nos juntamos para reivindicar mais segurança no bairro Sta. Lúcia através de um abaixo assinado</p>
-                </div>
-                <button class="btn-default" name="action5">PARTICIPAR</button>
-            </li>
-            <li>
-                <div class="content-msg">
-                    <p class="featured">Ajuda para o Orfanato Júlia Maria</p>
-                    <p class="simple">Estamos arrecadando roupas, sapatos, utensílios domésticos, tudo o que servir para as crianças ou para o bazar de lá.</p>
-                </div>
-                <button class="btn-default" name="action5">PARTICIPAR</button>
-            </li>
-            <li>
-                <div class="content-msg">
-                    <p class="featured">Medidas para assaltos no ponto da Rua 5</p>
-                    <p class="simple">Este grupo está reunindo pessoas para cobrarmos da prefeitura por abaixo assinado mais segurança no ponto de ônibus da Rua 5.</p>
-                </div>
-                <button class="btn-default" name="action5">PARTICIPAR</button>
-            </li>
-        </ul>
-        <ul class="lists-box-right local-ads">
-            <li class="gold">
-                <div class="photo-product1"></div>
-                <div class="content-msg">
-                    <p class="featured">Tênis Importado</p>
-                    <p class="simple">num. 39, pouco usado</p>
-                    <p class="price-product">R$ 30,00</p>
-                </div>
-                <div class="km-local">
-                    <p>4 km</p>
-                </div>
-            </li>
-            <li class="bronze">
-                <div class="photo-product2"></div>
-                <div class="content-msg">
-                    <p class="featured">Jeans Preto</p>
-                    <p class="simple">num. 42, usado</p>
-                    <p class="price-product">R$ 15,00</p>
-                </div>
-                <div class="km-local">
-                    <p>2,5 km</p>
-                </div>
-            </li>
-            <li>
-                <div class="photo-product3"></div>
-                <div class="content-msg">
-                    <p class="featured">Batedeira Charme</p>
-                    <p class="simple">Lacrada</p>
-                    <p class="price-product">R$ 100,00</p>
-                </div>
-                <div class="km-local">
-                    <p>3,2 km</p>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+            <ul class="lists-box-right messages nano-content">
+                <li>
+                    <div class="photo-user5 circle"></div>
+                    <div class="content-msg">
+                        <p class="name-user">Beyoncé</p>
+                        <p class="simple">Podemos combinar.</p>
+                    </div>
+                    <div class="icon-forward"></div>
+                </li>
+                <li>
+                    <div class="photo-user6 circle"></div>
+                    <div class="content-msg">
+                        <p class="name-user">Felipão</p>
+                        <p class="simple">Vou falar com o Julião.</p>
+                    </div>
+                    <div class="icon-checkmark"></div>
+                </li>
+            </ul>
+            <ul class="lists-box-right groups row nano-content">
+                <button class="btn waves-effect waves-light left col s12" name="action4">NOVO GRUPO</button>
+                <li>
+                    <div class="content-msg">
+                        <p class="featured">Caronas</p>
+                        <p class="simple">Grupo destinado a vizinhos do bairro Aclimação para disponibilização de caronas.</p>
+                    </div>
+                    <button class="btn-default" name="action5">DEIXAR DE PARTICIPAR</button>
+                </li>
+                <li>
+                    <div class="content-msg">
+                        <p class="featured">Festa Fim de Ano 2016</p>
+                        <p class="simple">Estamos organizando uma festa para a despedida de 2016 do pessoal da Vl. Mariana. Junte-se a nós!</p>
+                    </div>
+                    <button class="btn-default" name="action5">DEIXAR DE PARTICIPAR</button>
+                </li>
+                <li>
+                    <div class="content-msg">
+                        <p class="featured">Policiamento no Bairro Sta. Lúcia</p>
+                        <p class="simple">Nos juntamos para reivindicar mais segurança no bairro Sta. Lúcia através de um abaixo assinado</p>
+                    </div>
+                    <button class="btn-default" name="action5">PARTICIPAR</button>
+                </li>
+                <li>
+                    <div class="content-msg">
+                        <p class="featured">Ajuda para o Orfanato Júlia Maria</p>
+                        <p class="simple">Estamos arrecadando roupas, sapatos, utensílios domésticos, tudo o que servir para as crianças ou para o bazar de lá.</p>
+                    </div>
+                    <button class="btn-default" name="action5">PARTICIPAR</button>
+                </li>
+                <li>
+                    <div class="content-msg">
+                        <p class="featured">Medidas para assaltos no ponto da Rua 5</p>
+                        <p class="simple">Este grupo está reunindo pessoas para cobrarmos da prefeitura por abaixo assinado mais segurança no ponto de ônibus da Rua 5.</p>
+                    </div>
+                    <button class="btn-default" name="action5">PARTICIPAR</button>
+                </li>
+            </ul>
+            <ul class="lists-box-right local-ads nano-content">
+                <li class="gold">
+                    <div class="photo-product1"></div>
+                    <div class="content-msg">
+                        <p class="featured">Tênis Importado</p>
+                        <p class="simple">num. 39, pouco usado</p>
+                        <p class="price-product">R$ 30,00</p>
+                    </div>
+                    <div class="km-local">
+                        <p>4 km</p>
+                    </div>
+                </li>
+                <li class="bronze">
+                    <div class="photo-product2"></div>
+                    <div class="content-msg">
+                        <p class="featured">Jeans Preto</p>
+                        <p class="simple">num. 42, usado</p>
+                        <p class="price-product">R$ 15,00</p>
+                    </div>
+                    <div class="km-local">
+                        <p>2,5 km</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="photo-product3"></div>
+                    <div class="content-msg">
+                        <p class="featured">Batedeira Charme</p>
+                        <p class="simple">Lacrada</p>
+                        <p class="price-product">R$ 100,00</p>
+                    </div>
+                    <div class="km-local">
+                        <p>3,2 km</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="nano-pane">
+                <div class="nano-slider"></div>
+            </div>
+        </div>
     </div>
     </section>
 <?php include("includes/footer.php") ?>

@@ -149,3 +149,9 @@ select {
         color: #5a5a5a;
     }
 }
+
+.nano {
+    .nano-content { padding-right: 10px; }
+    .nano-pane   { background: #888; }
+    .nano-slider { background: #111; }
+}
