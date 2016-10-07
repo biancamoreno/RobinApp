@@ -8525,7 +8525,7 @@ footer {
 
 .box-right {
   position: absolute;
-  right: -318px;
+  display: none;
   top: 60px;
   width: 318px;
   height: 100%;
@@ -8533,7 +8533,8 @@ footer {
   box-shadow: 0 5px 11px 3px #cecece;
   transition: all 0.35s ease; }
   .box-right.active {
-    right: 0; }
+    right: 0;
+    display: block; }
   .box-right .tabs {
     display: flex;
     display: -webkit- flex;
@@ -8753,13 +8754,21 @@ footer {
   header {
     display: block;
     height: 300px; }
+    header.header-default .type-vision {
+      font-size: 26px;
+      color: #fff;
+      width: 30px;
+      height: 30px; }
+      header.header-default .type-vision.active:before {
+        content: "\ea7a"; }
     header.header-default .header-search {
       padding: 0 10px;
-      display: inline; }
+      z-index: 0;
+      background-color: rgba(255, 155, 35, 0.55); }
       header.header-default .header-search input {
-        width: 40%; }
+        max-width: 200px !important; }
     header.header-default .picture-user {
-      top: 10px;
+      top: 5px;
       right: 10px;
       position: absolute; }
     header .form-login {
@@ -8800,7 +8809,27 @@ footer {
     font-size: 18px; }
 
   #form-signup .input-field, #form-signup-update .input-field {
-    width: 100%; } }
+    width: 100%; }
+
+  .btn-floating {
+    right: auto !important;
+    left: 20px;
+    bottom: 10%;
+    z-index: 0; }
+
+  .filter-box {
+    display: none; }
+
+  #modal-add {
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0 !important;
+    margin: 0; }
+
+  .box-right.active {
+    width: 100%;
+    z-index: 999999; } }
 @media only screen and (max-width: 992px) {
   .rb-video div {
     width: 95%;

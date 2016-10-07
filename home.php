@@ -1,6 +1,7 @@
 <?php include("includes/header.php") ?>
 <body class="home-page">
     <header class="header-default">
+        <a class="hide-on-med-and-up type-vision icon-map2 left"></a>
         <a class="r-logo" href="home.php"></a>
         <div class="header-search input-field">
             <i class="icon-search prefix hide-on-small-only"></i>

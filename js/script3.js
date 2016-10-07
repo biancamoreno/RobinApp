@@ -151,6 +151,12 @@ $(document).ready(function(){
         }
     });
 
+    $('.type-vision').click(function(){
+        $('.box-right').toggleClass('active');
+        $(this).toggleClass('active');
+
+    })
+
     $('.modal-delete').leanModal();
 
     firebase.auth().onAuthStateChanged(function(user) {

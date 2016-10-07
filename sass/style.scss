@@ -653,7 +653,7 @@ footer {
 
 .box-right {
     position: absolute;
-    right: -318px;
+    display: none;
     top: 60px;
     @include size(318px, 100%);
     background-color: #fff;
@@ -661,6 +661,7 @@ footer {
     transition: all 0.35s ease;
     &.active {
         right: 0;
+        display: block;
     }
     .tabs {
         @include displayFlex;
@@ -950,15 +951,26 @@ footer {
         display: block;
         height: 300px;
         &.header-default {
+            .type-vision {
+                font-size: 26px;
+                color: #fff;
+                @include size(30px);
+                &.active {
+                    &:before {
+                        content: "\ea7a";
+                    }
+                }
+            }
             .header-search {
                 padding: 0 10px;
-                display: inline;
+                z-index: 0;
+                background-color: rgba(255, 155, 35, 0.55);
                 input {
-                    width: 40%;
+                    max-width: 200px!important;
                 }
             }
             .picture-user {
-                top: 10px;
+                top: 5px;
                 right: 10px;
                 position: absolute;
             }
@@ -1029,6 +1041,27 @@ footer {
     #form-signup, #form-signup-update {
         .input-field {
             width: 100%;
+        }
+    }
+    .btn-floating {
+        right: auto!important;
+        left: 20px;
+        bottom: 10%;
+        z-index: 0;
+    }
+    .filter-box {
+        display: none;
+    }
+    #modal-add {
+        @include size(100vw, 100vh);
+        left: 0;
+        top: 0!important;
+        margin: 0;
+    }
+    .box-right {
+        &.active {
+            width: 100%;
+            z-index: 999999;
         }
     }
 }
