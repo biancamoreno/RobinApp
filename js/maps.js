@@ -100,9 +100,15 @@ function addPinToMap(key, pin, map){
   markersArray[key]=marker;
 
   var usuario = pin['usuario'];
-
-  var text = "<p>"+pin['descricao']+"</p>";
+  var text = "<p style='font-weight: bold;'>"+pin['titulo']+"</p>";
+      text += "<p>"+pin['descricao']+"</p>";
   var time = timeDifference(pin['data'])
+
+  var userId = pin['usuario']["id"];
+
+  firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
+    data = snapshot.val();
+  });
 
   var usuarioNome = "";
 
@@ -124,9 +130,10 @@ function addPinToMap(key, pin, map){
   });
 
   var feedHtml = '<li data-id="'+key+'">'
-                        +'<div class="photo-user circle"></div>'
+                        +'<div class="photo-user circle" style="background: url("' + data.foto + '");"></div>'
                         +'<div class="content-msg">'
                             +'<p class="name-user">'+usuarioNome+'</p>'
+                            +'<p class="simple">'+pin['titulo']+'</p>'
                             +'<p class="simple">'+pin['descricao']+'</p>'
                             +'<p class="time-notification">'+time+'</p>'
                         +'</div>'
@@ -209,6 +216,15 @@ function initialize()
 }
 
 $(document).ready(function() {
+
+  firebase.auth().onAuthStateChanged(function(user) {
+      var userId = firebase.auth().currentUser.uid;
+      return firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
+          data = snapshot.val();
+          $('.picture-user').css("background-image", "url(" + data.foto + ")");  
+        })
+    })
+
   var mapModal = true;
 
   $('.modal-trigger').leanModal({
