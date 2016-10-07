@@ -7,8 +7,10 @@
                 <input name="passwordDelete" id="passwordDelete" type="password" class="validate">
                 <label class="active" for="passwordUpdate">Senha</label>
             </div>
-            <button class="btn waves-effect waves-light modal-close" name="action6">CANCELAR</button>
-            <button class="btn-default" id="deleteUser" name="action7">EXCLUIR</button>
+            <div>
+                <button class="btn waves-effect waves-light modal-close" name="action6">CANCELAR</button>
+                <button class="btn-default" id="deleteUser" name="action7">EXCLUIR</button>
+            </div>
         </div>
     </div>
     <header class="header-default">
@@ -69,11 +71,13 @@
                     <label class="active" for="numberUpdate">Número</label>
                 </div>
             </div>
-            <a class="modal-delete left" href="#modalDelete">Excluir conta</a>
-            <button class="btn-large waves-effect waves-light right" type="submit" name="action">ALTERAR</button>
+            <div>
+                <a class="modal-delete left" href="#modalDelete">Excluir conta</a>
+                <button class="btn-large waves-effect waves-light right" type="submit" name="action">ALTERAR</button>
+            </div>
         </form>
     </section>
     <footer>
-                <p>Robin App. Todos os direitos reservados ® 2016</p>
-            </footer>
+        <p>Robin App. Todos os direitos reservados ® 2016</p>
+    </footer>
     <?php include("includes/footer.php") ?>

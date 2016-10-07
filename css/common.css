@@ -23,6 +23,11 @@ select {
   display: block;
   background-color: transparent !important; }
 
+.search-place {
+  color: #fff; }
+  .search-place:focus {
+    color: #fff; }
+
 .btn {
   background-color: #f7ca18 !important; }
   .btn:focus {
@@ -84,11 +89,27 @@ select {
     font-size: 15px;
     color: #5a5a5a; }
 
-.nano .nano-content {
-  padding-right: 10px; }
+.nano .nano-content:focus {
+  border: 0; }
 .nano .nano-pane {
   background: #888; }
 .nano .nano-slider {
   background: #111; }
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #fff; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #fff; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fff; }
 
 /*# sourceMappingURL=common.css.map */

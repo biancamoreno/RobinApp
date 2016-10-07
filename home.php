@@ -4,7 +4,7 @@
         <a class="r-logo" href="home.php"></a>
         <div class="header-search input-field">
             <i class="icon-search prefix hide-on-small-only"></i>
-            <input type="text" placeholder="Buscar um local" id="map-search">
+            <input type="text" placeholder="Buscar um local" id="map-search" class="search-place">
         </div>
         <div class="picture-user circle right dropdown-button" data-beloworigin="true" data-activates='dropdown1'></div>
         <ul id='dropdown1' class='dropdown-content'>
@@ -74,8 +74,13 @@
             <div class="tab-groups tab"><span class="icon-bubbles4"></span></div>
             <div class="tab-ads tab"><span class="icon-bullhorn"></span></div>
         </div>
-        <div id="about" class="nano">
+        <div class="nano">
             <ul class="lists-box-right feed nano-content" id="tab-feed"></ul>
+            <div class="nano-pane">
+                <div class="nano-slider"></div>
+            </div>
+        </div>
+        <div class="nano">
             <ul class="lists-box-right list-friends nano-content">
                 <li>
                     <div class="photo-user1 circle"></div>
@@ -122,6 +127,11 @@
                     </div>
                 </li>
             </ul>
+            <div class="nano-pane">
+                <div class="nano-slider"></div>
+            </div>
+        </div>
+        <div class="nano">
             <ul class="lists-box-right messages nano-content">
                 <li>
                     <div class="photo-user5 circle"></div>
@@ -140,6 +150,11 @@
                     <div class="icon-checkmark"></div>
                 </li>
             </ul>
+            <div class="nano-pane">
+                <div class="nano-slider"></div>
+            </div>
+        </div>
+        <div class="nano">
             <ul class="lists-box-right groups row nano-content">
                 <button class="btn waves-effect waves-light left col s12" name="action4">NOVO GRUPO</button>
                 <li>
@@ -178,6 +193,11 @@
                     <button class="btn-default" name="action5">PARTICIPAR</button>
                 </li>
             </ul>
+            <div class="nano-pane">
+                <div class="nano-slider"></div>
+            </div>
+        </div>
+        <div class="nano">
             <ul class="lists-box-right local-ads nano-content">
                 <li class="gold">
                     <div class="photo-product1"></div>
