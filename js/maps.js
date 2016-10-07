@@ -1,4 +1,4 @@
-var myCenter=new google.maps.LatLng(-23.574761, -46.622472);
+var myCenter=new google.maps.LatLng(-23.573978, -46.623272);
 
 function  initMap(){
   var mapProp = {
@@ -100,16 +100,13 @@ function addPinToMap(key, pin, map){
   markersArray[key]=marker;
 
   var usuario = pin['usuario'];
-  var text = "<p style='font-weight: bold;'>"+pin['titulo']+"</p>";
+  var text = "<h4 style='font-size: 20px; margin: 0;'>"+pin['titulo']+"</h4>";
       text += "<p>"+pin['descricao']+"</p>";
   var time = timeDifference(pin['data'])
 
   var userId = pin['usuario']["id"];
 
-  firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
-    data = snapshot.val();
-  });
-
+  var usuarioFoto = "";
   var usuarioNome = "";
 
   if (pin['usuario']!="" && pin['usuario']!==undefined) {
@@ -117,6 +114,7 @@ function addPinToMap(key, pin, map){
   }else{
     var user = firebase.auth().currentUser;
     usuarioNome=user.displayName;
+    usuarioFoto = "url('"+user.photoURL+"')";
   }
 
   text = text+"<p>"+usuarioNome+": "+time+"</p>";
@@ -129,8 +127,10 @@ function addPinToMap(key, pin, map){
     info.open(map,marker);
   });
 
+
+
   var feedHtml = '<li data-id="'+key+'">'
-                        +'<div class="photo-user circle" style="background: url("' + data.foto + '");"></div>'
+                        +'<div class="photo-user circle" style="background-image: '+usuarioFoto+'"></div>'
                         +'<div class="content-msg">'
                             +'<p class="name-user">'+usuarioNome+'</p>'
                             +'<p class="simple">'+pin['titulo']+'</p>'
@@ -140,8 +140,18 @@ function addPinToMap(key, pin, map){
                         +'<div class="type-notification '+pin['categoria']+'"></div>'
                     +'</li>';
 
-  $('#tab-feed').prepend(feedHtml)
-$(".nano").nanoScroller();
+  $('#tab-feed').prepend(feedHtml);
+
+  firebase.database().ref('/usuarios/'+userId+'/foto').once('value').then(function(snapshot) {
+      var fotourl = snapshot.val();
+      usuarioFoto = "url('"+fotourl+"')";
+      $('#tab-feed').find('li[data-id="'+key+'"] .photo-user').css('background-image', usuarioFoto);
+  });
+
+
+  $(".nano").nanoScroller();
+
+  
 
 
 
@@ -218,12 +228,27 @@ function initialize()
 $(document).ready(function() {
 
   firebase.auth().onAuthStateChanged(function(user) {
-      var userId = firebase.auth().currentUser.uid;
-      return firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
-          data = snapshot.val();
-          $('.picture-user').css("background-image", "url(" + data.foto + ")");  
-        })
-    })
+    if(user){
+      console.log(user)
+      return firebase.database().ref('/usuarios/' + user.uid).once('value').then(function(snapshot) {
+        var userData = snapshot.val();
+        $('#firstnameUpdate').val(userData.nome);
+        $('#lastnameUpdate').val(userData.sobrenome);
+        $('#emailUpdate').val(userData.email);
+        $('#passwordUpdate').val(userData.senha);
+        $('#cepUpdate').val(userData.endereco.cep);
+        $('#numberUpdate').val(userData.endereco.numero);
+        $('#fotoUpdate').attr('src', userData.foto);
+
+        $(function() {
+            Materialize.updateTextFields();
+        });   
+        var foto = "url('"+userData.foto+"')";
+        $('.picture-user').css("background-image", foto);
+      });
+    }
+
+  });
 
   var mapModal = true;
 

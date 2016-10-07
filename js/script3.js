@@ -67,7 +67,7 @@ $(document).ready(function(){
             data: formData,
             success: function (file) {
 
-                var userId = firebase.auth().currentUser.uid;
+                var userC = firebase.auth().currentUser;
                 var nome = $("#form-update").find('#firstnameUpdate').val();
                 var sobrenome = $("#form-update").find('#lastnameUpdate').val();
                 var email = $("#form-update").find('#emailUpdate').val();
@@ -94,9 +94,13 @@ $(document).ready(function(){
                     notificacoes: true
                 }
 
-                firebase.database().ref('usuarios').child(userId).set(data);
-                firebase.database().ref('usuarios').child(userId).child('endereco').set(dataEndereco);
-                firebase.database().ref('usuarios').child(userId).child('configuracoes').set(dataConfiguracoes);
+                firebase.database().ref('usuarios').child(userC.uid).set(data);
+                firebase.database().ref('usuarios').child(userC.uid).child('endereco').set(dataEndereco);
+                firebase.database().ref('usuarios').child(userC.uid).child('configuracoes').set(dataConfiguracoes);
+
+                userC.updateProfile({
+                    photoURL: file
+                })
 
             },
             cache: false,
@@ -159,24 +163,6 @@ $(document).ready(function(){
 
     $('.modal-delete').leanModal();
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        var userId = firebase.auth().currentUser.uid;
-        return firebase.database().ref('/usuarios/' + userId).once('value').then(function(snapshot) {
-            data = snapshot.val();
-        
-            $('#firstnameUpdate').val(data.nome);
-            $('#lastnameUpdate').val(data.sobrenome);
-            $('#emailUpdate').val(data.email);
-            $('#passwordUpdate').val(data.senha);
-            $('#cepUpdate').val(data.endereco.cep);
-            $('#numberUpdate').val(data.endereco.numero);
-            $('#fotoUpdate').attr('src', data.foto);
-
-            $(function() {
-                Materialize.updateTextFields();
-            });   
-        });
-    });
 });
 
 $('#btn-login').leanModal();
@@ -186,6 +172,7 @@ $('.btn-signup').leanModal();
 var database = firebase.database();
 var firebaseRef = database.ref("locations");
 var geoFire = new GeoFire(firebaseRef);
+
 
 
 $('#form-login').submit(function() {
@@ -248,15 +235,15 @@ $('#form-signup').submit(function() {
 
         var fullname = data.nome+" "+data.sobrenome;
 
-        user.updateProfile({
-            displayName: fullname
-        })
-
         database.ref('usuarios/'+user.uid).set(data);
         database.ref('usuarios/'+user.uid+'/endereco').set(dataEndereco);
         database.ref('usuarios/'+user.uid+'/configuracoees').set(dataConfiguracoes);
 
-        window.location=URL_BASE+"home.php";
+        user.updateProfile({
+            displayName: fullname
+        }).then(function() {
+          window.location=URL_BASE+"home.php";
+        });
 
     }, function(error) {
       var errorCode = error.code;
