@@ -17,12 +17,12 @@
         <div class="filter-box active">
             <div class="header-filter"><span>Filtros</span><i class="icon-ctrl"></i></div>
             <ul id="alert-types">
-                <li><span class="icon icon-perigo"></span><span>Perigo e assalto</span></li>
+                <li><span class="icon icon-perigo"></span><span>Perigo / Violência</span></li>
                 <li><span class="icon icon-agua"></span><span>Falta de água</span></li>
-                <li><span class="icon icon-evento"></span><span>Evento</span></li>
-                <li><span class="icon icon-incendio"></span><span>Incêndio</span></li>
+                <li><span class="icon icon-evento"></span><span>Evento / Festa</span></li>
+                <li><span class="icon icon-incendio"></span><span>Desastres Naturais</span></li>
                 <li><span class="icon icon-acidente"></span><span>Acidente</span></li>
-                <li><span class="icon icon-construcao"></span><span>Construção</span></li>
+                <li><span class="icon icon-construcao"></span><span>Obras</span></li>
                 <li><span class="icon icon-energia"></span><span>Problema elétrico</span></li>
                 <li><span class="icon icon-users amigos"></span><span>Amigos</span></li>
                 <li><span class="icon icon-users outros"></span><span>Outros Vizinhos</span></li>

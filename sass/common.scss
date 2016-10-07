@@ -146,8 +146,8 @@ select {
         padding: 10px;
         box-sizing: border-box;
         &:focus {
-            border: none;
-            box-shadow: none;
+            border: 1px solid #d1d1d1!important;
+            box-shadow: none!important;
         }
     }
     label {
